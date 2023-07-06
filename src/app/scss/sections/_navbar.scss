@@ -1,0 +1,28 @@
+@use "../variables";
+nav {
+  min-height: 3.75rem;
+  .wrapper {
+    @include variables.between;
+    padding: 0 4rem;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    .brand {
+      a {
+        @include variables.flex;
+        fill: none;
+        margin: 2rem 0;
+        transition: 0.3s ease-in-out;
+        outline: 2px dashed transparent;
+        cursor: pointer;
+        &:hover {
+          fill: #da64cc37;
+        }
+        &:focus {
+          outline-color: variables.$theme-color;
+          fill: #da64cc37;
+        }
+      }
+    }
+  }
+}

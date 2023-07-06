@@ -1,0 +1,5 @@
+@use "../variables";
+#logo {
+  color: variables.$theme-color;
+  height: 4rem;
+}
