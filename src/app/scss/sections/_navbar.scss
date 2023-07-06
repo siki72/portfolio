@@ -24,5 +24,26 @@ nav {
         }
       }
     }
+    .nav-items {
+      display: flex;
+      gap: 3rem;
+      color: variables.$lightest-slate;
+      counter-reset: nav-list;
+      &-list {
+        display: flex;
+        gap: 3rem;
+        &-item {
+          a {
+            color: inherit;
+            padding: 10px;
+            &::before {
+              counter-increment: nav-list;
+              content: "0" counter(nav-list) ". ";
+              color: variables.$theme-color;
+            }
+          }
+        }
+      }
+    }
   }
 }

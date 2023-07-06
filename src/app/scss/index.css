@@ -1,0 +1,109 @@
+/* :root {
+  --navy-shadow: rgba(2, 12, 27, 0.7);
+  --background-color: #0a192f;
+  --lightest-navy: #233554;
+  --light-navy: #112240;
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #ccd6f6;
+  --lightest-slate: #a8b2d1;
+  --theme-color: #9d00ff;
+}
+$theme-color: #9d00ff;
+ */
+body {
+  background-color: #0a192f;
+}
+
+/* :root {
+  --navy-shadow: rgba(2, 12, 27, 0.7);
+  --background-color: #0a192f;
+  --lightest-navy: #233554;
+  --light-navy: #112240;
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #ccd6f6;
+  --lightest-slate: #a8b2d1;
+  --theme-color: #9d00ff;
+}
+$theme-color: #9d00ff;
+ */
+/* :root {
+  --navy-shadow: rgba(2, 12, 27, 0.7);
+  --background-color: #0a192f;
+  --lightest-navy: #233554;
+  --light-navy: #112240;
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #ccd6f6;
+  --lightest-slate: #a8b2d1;
+  --theme-color: #9d00ff;
+}
+$theme-color: #9d00ff;
+ */
+#logo {
+  color: #9d00ff;
+  height: 4rem;
+}
+
+/* :root {
+  --navy-shadow: rgba(2, 12, 27, 0.7);
+  --background-color: #0a192f;
+  --lightest-navy: #233554;
+  --light-navy: #112240;
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #ccd6f6;
+  --lightest-slate: #a8b2d1;
+  --theme-color: #9d00ff;
+}
+$theme-color: #9d00ff;
+ */
+nav {
+  min-height: 3.75rem;
+}
+nav .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+  position: relative;
+}
+nav .wrapper .brand a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: none;
+  margin: 2rem 0;
+  transition: 0.3s ease-in-out;
+  outline: 2px dashed transparent;
+  cursor: pointer;
+}
+nav .wrapper .brand a:hover {
+  fill: rgba(218, 100, 204, 0.2156862745);
+}
+nav .wrapper .brand a:focus {
+  outline-color: #9d00ff;
+  fill: rgba(218, 100, 204, 0.2156862745);
+}
+nav .wrapper .nav-items {
+  display: flex;
+  gap: 3rem;
+  color: #a8b2d1;
+  counter-reset: nav-list;
+}
+nav .wrapper .nav-items-list {
+  display: flex;
+  gap: 3rem;
+}
+nav .wrapper .nav-items-list-item a {
+  color: inherit;
+  padding: 10px;
+}
+nav .wrapper .nav-items-list-item a::before {
+  counter-increment: nav-list;
+  content: "0" counter(nav-list) ". ";
+  color: #9d00ff;
+}/*# sourceMappingURL=index.css.map */
