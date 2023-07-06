@@ -36,6 +36,7 @@ nav {
           a {
             color: inherit;
             padding: 10px;
+            font-family: var(--font-fira);
             &::before {
               counter-increment: nav-list;
               content: "0" counter(nav-list) ". ";

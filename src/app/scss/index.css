@@ -101,6 +101,7 @@ nav .wrapper .nav-items-list {
 nav .wrapper .nav-items-list-item a {
   color: inherit;
   padding: 10px;
+  font-family: var(--font-fira);
 }
 nav .wrapper .nav-items-list-item a::before {
   counter-increment: nav-list;
