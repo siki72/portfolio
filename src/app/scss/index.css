@@ -1,4 +1,8 @@
 @charset "UTF-8";
+html {
+  scroll-behavior: smooth !important;
+}
+
 body {
   background-color: #0a192f;
 }

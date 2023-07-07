@@ -5,7 +5,7 @@ import Button from "../../components/Button.jsx";
 
 const Navbar = () => {
   const datas = [
-    { name: "A propos", link: "/#apropos" },
+    { name: "A propos", link: "/#about" },
     { name: "Experience", link: "/#experience" },
     { name: "Projets", link: "/#projets" },
     {
