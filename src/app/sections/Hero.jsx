@@ -19,7 +19,7 @@ const Hero = () => {
         </Link>
       </p>
       <div className="hero-button">
-        <Button text="Contact" link="/#contact" />
+        <Button text="Contact" link="/#work" />
       </div>
     </section>
   );
