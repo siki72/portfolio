@@ -75,4 +75,48 @@ nav .wrapper .nav-items-list-item a:hover {
 }
 .btn:hover, .btn:focus {
   background-color: #233554;
+}
+
+.social-icons {
+  position: fixed;
+  bottom: 0;
+  left: 4rem;
+}
+.social-icons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.social-icons-list-item {
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.social-icons-list-item-link {
+  padding: 10px;
+  color: #a8b2d1;
+  outline: 2px dashed transparent;
+  transition: all 0.3s ease-in-out;
+}
+.social-icons-list-item-link:hover {
+  color: #9d00ff;
+}
+.social-icons-list-item-link:focus {
+  outline-color: #9d00ff;
+  transform: translateY(-4px);
+  color: #9d00ff;
+}
+.social-icons-list-item:hover {
+  transform: translateY(-4px);
+}
+.social-icons::after {
+  content: "";
+  width: 2px;
+  height: 5.625rem;
+  display: block;
+  background-color: #ccd6f6;
+  margin: 0 auto;
+  display: block;
 }/*# sourceMappingURL=index.css.map */

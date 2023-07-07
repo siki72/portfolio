@@ -1,7 +1,7 @@
 import Logo from "@/components/Logo.jsx";
 import Link from "next/link.js";
 import React from "react";
-import Button from "../scss/components/Button.jsx";
+import Button from "../../components/Button.jsx";
 
 const Navbar = () => {
   const datas = [
