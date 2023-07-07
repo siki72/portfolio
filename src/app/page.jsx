@@ -4,6 +4,7 @@ import SocialIcons from "@/components/SocialIcons.jsx";
 import Email from "@/components/Email.jsx";
 import Hero from "./sections/Hero.jsx";
 import About from "./sections/About.jsx";
+import Experience from "./sections/Experience.jsx";
 
 const page = () => {
   return (
@@ -14,6 +15,7 @@ const page = () => {
       <main>
         <Hero />
         <About />
+        <Experience />
       </main>
     </div>
   );

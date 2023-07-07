@@ -353,4 +353,117 @@ main {
   filter: grayscale(100%);
   transition: 0.3s ease-in-out;
   border-radius: 0.3rem;
+}
+
+.experience {
+  margin: 15rem auto;
+  min-width: 43.75rem;
+}
+.experience .title {
+  font-family: var(--font-raleway);
+  color: #a8b2d1;
+  position: relative;
+}
+.experience .title h2 {
+  margin-bottom: 2rem;
+  font-size: 32px;
+  font-weight: 700;
+}
+.experience .title h2::before {
+  counter-increment: title;
+  content: "0" counter(title) ".";
+  margin-right: 0.5rem;
+  color: #9d00ff;
+}
+.experience .title h2::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 300px;
+  background-color: #233554;
+  height: 2px;
+  margin-left: 3rem;
+}
+.experience .container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  gap: 1rem;
+}
+.experience .container .exp-slider {
+  position: relative;
+  height: -moz-max-content;
+  height: max-content;
+}
+.experience .container .exp-slider .underline {
+  background-color: #9d00ff;
+  position: absolute;
+  left: -0.5px;
+  top: 0;
+  width: 3px;
+  height: 2.5rem;
+  transition: 0.3s ease-in-out;
+  border-radius: 0.2rem;
+}
+.experience .container .exp-slider::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  height: 100%;
+  background-color: #233554;
+  width: 1px;
+}
+.experience .container .exp-slider-item {
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  display: flex;
+  vertical-align: middle;
+  cursor: pointer;
+  width: 100%;
+}
+.experience .container .exp-slider-item span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8892b0;
+  font-family: var(--font-fira);
+}
+.experience .container .exp-slider-item:hover {
+  background-color: #233554;
+}
+.experience .container .exp-slider-item:hover span {
+  color: #9d00ff;
+}
+.experience .container .exp-slider-item-selected span {
+  color: #9d00ff;
+}
+.experience .container .exp-details {
+  height: 40vh;
+  font-family: var(--font-raleway);
+}
+.experience .container .exp-details-position {
+  color: #a8b2d1;
+}
+.experience .container .exp-details-position-company {
+  color: #9d00ff;
+}
+.experience .container .exp-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-left: 1.4rem;
+  margin-right: 20%;
+}
+.experience .container .exp-details-list-item {
+  position: relative;
+  font-weight: 500;
+  color: #8892b0;
+  line-height: 1.5rem;
+}
+.experience .container .exp-details-list-item::before {
+  content: "◌";
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  color: #9d00ff;
 }/*# sourceMappingURL=index.css.map */

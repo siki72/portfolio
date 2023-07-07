@@ -4,7 +4,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="about" id="about">
+    <section className="about" id="about">
       <div className="title">
         <h2>A propos de moi</h2>
       </div>
@@ -75,7 +75,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
