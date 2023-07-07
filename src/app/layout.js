@@ -3,11 +3,7 @@ import "./scss/index.css";
 import { Inter, Raleway, Fira_Code, Fasthand } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-const fasthand = Fasthand({
-  subsets: ["latin"],
-  variable: ["--font-fast"],
-  weight: ["400"],
-});
+
 const fira = Fira_Code({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -22,11 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${fira.variable} ${raleway.variable} ${fasthand.variable}`}
-      >
-        {children}
-      </body>
+      <body className={`${fira.variable} ${raleway.variable}`}>{children}</body>
     </html>
   );
 }

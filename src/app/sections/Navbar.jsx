@@ -1,6 +1,7 @@
 import Logo from "@/components/Logo.jsx";
 import Link from "next/link.js";
 import React from "react";
+import Button from "../scss/components/Button.jsx";
 
 const Navbar = () => {
   const datas = [
@@ -21,7 +22,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="nav-items">
-          <div className="nav-items-list">
+          <ul className="nav-items-list">
             {datas.map(({ name, link }) => (
               <li key={name} className="nav-items-list-item">
                 <Link href={link} className="nav-items-list-item-link">
@@ -29,6 +30,9 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
+          </ul>
+          <div className="nav-items-button">
+            <Button text="CV" link="http://localhost:3000/cv.pdf" />
           </div>
         </div>
       </div>

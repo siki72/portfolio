@@ -1,64 +1,12 @@
-/* :root {
-  --navy-shadow: rgba(2, 12, 27, 0.7);
-  --background-color: #0a192f;
-  --lightest-navy: #233554;
-  --light-navy: #112240;
-  --dark-slate: #495670;
-  --slate: #8892b0;
-  --light-slate: #ccd6f6;
-  --lightest-slate: #a8b2d1;
-  --theme-color: #9d00ff;
-}
-$theme-color: #9d00ff;
- */
 body {
   background-color: #0a192f;
 }
 
-/* :root {
-  --navy-shadow: rgba(2, 12, 27, 0.7);
-  --background-color: #0a192f;
-  --lightest-navy: #233554;
-  --light-navy: #112240;
-  --dark-slate: #495670;
-  --slate: #8892b0;
-  --light-slate: #ccd6f6;
-  --lightest-slate: #a8b2d1;
-  --theme-color: #9d00ff;
-}
-$theme-color: #9d00ff;
- */
-/* :root {
-  --navy-shadow: rgba(2, 12, 27, 0.7);
-  --background-color: #0a192f;
-  --lightest-navy: #233554;
-  --light-navy: #112240;
-  --dark-slate: #495670;
-  --slate: #8892b0;
-  --light-slate: #ccd6f6;
-  --lightest-slate: #a8b2d1;
-  --theme-color: #9d00ff;
-}
-$theme-color: #9d00ff;
- */
 #logo {
   color: #9d00ff;
   height: 4rem;
 }
 
-/* :root {
-  --navy-shadow: rgba(2, 12, 27, 0.7);
-  --background-color: #0a192f;
-  --lightest-navy: #233554;
-  --light-navy: #112240;
-  --dark-slate: #495670;
-  --slate: #8892b0;
-  --light-slate: #ccd6f6;
-  --lightest-slate: #a8b2d1;
-  --theme-color: #9d00ff;
-}
-$theme-color: #9d00ff;
- */
 nav {
   min-height: 3.75rem;
 }
@@ -93,18 +41,38 @@ nav .wrapper .nav-items {
   gap: 3rem;
   color: #a8b2d1;
   counter-reset: nav-list;
+  font-family: var(--font-fira);
 }
 nav .wrapper .nav-items-list {
   display: flex;
   gap: 3rem;
 }
 nav .wrapper .nav-items-list-item a {
+  outline: 2px dashed transparent;
   color: inherit;
   padding: 10px;
-  font-family: var(--font-fira);
+  transition: all 0.3s ease-in-out;
 }
 nav .wrapper .nav-items-list-item a::before {
   counter-increment: nav-list;
   content: "0" counter(nav-list) ". ";
   color: #9d00ff;
+}
+nav .wrapper .nav-items-list-item a:focus {
+  outline-color: #9d00ff;
+}
+nav .wrapper .nav-items-list-item a:hover {
+  color: #9d00ff;
+}
+
+.btn {
+  color: #9d00ff;
+  padding: 0.75rem 1rem;
+  background-color: transparent;
+  border: 1px solid #9d00ff;
+  border-radius: 4px;
+  font-size: 13px;
+}
+.btn:hover, .btn:focus {
+  background-color: #233554;
 }/*# sourceMappingURL=index.css.map */

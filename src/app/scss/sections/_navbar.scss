@@ -29,17 +29,25 @@ nav {
       gap: 3rem;
       color: variables.$lightest-slate;
       counter-reset: nav-list;
+      font-family: var(--font-fira);
       &-list {
         display: flex;
         gap: 3rem;
         &-item {
           a {
+            outline: 2px dashed transparent;
             color: inherit;
             padding: 10px;
-            font-family: var(--font-fira);
+            transition: all 0.3s ease-in-out;
             &::before {
               counter-increment: nav-list;
               content: "0" counter(nav-list) ". ";
+              color: variables.$theme-color;
+            }
+            &:focus {
+              outline-color: variables.$theme-color;
+            }
+            &:hover {
               color: variables.$theme-color;
             }
           }
