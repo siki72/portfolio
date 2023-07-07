@@ -13,13 +13,13 @@ const Hero = () => {
       <p className="hero-text">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. In vel, ullam
         at optio aperiam nam sit recusandae error libero quam quos repudiandae
-        consectetur ex molestiae rerum quod beatae
+        consectetur ex molestiae rerum quod beatae&nbsp;
         <Link className="hero-link" href="/#projets">
-          Projets
+          Projets.
         </Link>
       </p>
       <div className="hero-button">
-        <Button text="A definir" link="/" />
+        <Button text="Contact" link="/#contact" />
       </div>
     </div>
   );

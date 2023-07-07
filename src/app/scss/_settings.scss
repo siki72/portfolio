@@ -2,3 +2,27 @@
 body {
   background-color: variables.$background-color;
 }
+.link {
+  display: inline-block;
+  position: relative;
+  color: variables.$theme-color;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.1rem;
+    bottom: 0;
+    left: 0;
+    background-color: variables.$theme-color;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  &:hover,
+  &:focus {
+    &::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}
