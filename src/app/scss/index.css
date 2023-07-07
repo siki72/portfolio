@@ -625,4 +625,181 @@ main {
 }
 .projects-container .project:nth-of-type(even) .project-info-description p {
   text-align: start;
+}
+
+.contact {
+  margin: 15rem auto;
+}
+.contact-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-c-title {
+  color: #9d00ff;
+  font-size: 16px;
+  font-family: var(--font-fira);
+  font-weight: 300;
+}
+.contact-c-title::before {
+  counter-increment: title;
+  content: "0" counter(title) ".";
+  margin-right: 0.5rem;
+  color: #9d00ff;
+}
+.contact-c-sub-title {
+  font-size: clamp(40px, 8vw, 80px);
+  color: #ccd6f6;
+  font-family: var(--font-raleway);
+}
+.contact-c-text {
+  color: #8892b0;
+  font-size: 18px;
+  text-align: center;
+  font-family: var(--font-raleway);
+  font-weight: 600;
+  letter-spacing: 0.07rem;
+  line-height: 1.6rem;
+}
+.contact form {
+  max-width: 60%;
+  margin: 3rem auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 100px);
+  grid-template-areas: "firstName lastName" "email phone" "message message" "btn btn";
+  /* touts les inputs qui n'ont pas de focus et qui'ils ont du text inside */
+}
+.contact form .ic1 {
+  grid-area: firstName;
+}
+.contact form .ic2 {
+  grid-area: lastName;
+}
+.contact form .ic3 {
+  grid-area: email;
+}
+.contact form .ic4 {
+  grid-area: phone;
+}
+.contact form .ic5 {
+  grid-area: message;
+  min-height: 13rem;
+}
+.contact form .ic6 {
+  grid-area: btn;
+  margin-top: 13rem;
+}
+.contact form #btn {
+  margin-top: 10rem;
+}
+.contact form .errorMessage {
+  text-align: center;
+  margin: 1rem auto;
+  min-width: 90%;
+  background-color: rgb(213, 98, 98);
+  height: 4rem;
+  margin-top: -3.05rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
+  letter-spacing: 1px;
+}
+.contact form .inputContainer {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+}
+.contact form .ic6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact form .label {
+  position: absolute;
+  top: 2rem;
+  left: 20px;
+  color: rgba(169, 161, 161, 0);
+  left: 1rem;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+.contact form .input {
+  resize: none;
+  margin: 1rem 0;
+  padding: 1rem 1rem;
+  border: 1px solid #9d00ff;
+  min-width: 100%;
+  border-radius: 4px;
+  outline: 0;
+  background-color: transparent;
+  border-radius: 1rem;
+  color: #6e07f3;
+  font-size: clamp(1.1rem, 1.5vw, 1.2rem);
+}
+.contact form input {
+  max-height: 3rem;
+}
+.contact form .cut {
+  position: absolute;
+  width: 3rem;
+  height: 0.5rem;
+  top: 0.8rem;
+  left: 0.6rem;
+  display: none;
+}
+.contact form .short {
+  background-color: white;
+}
+.contact form .cuttel {
+  width: 5.2rem;
+}
+.contact form .cutpre {
+  width: 4.2rem;
+}
+.contact form .cutmes {
+  width: 4.4rem;
+}
+.contact form .input:focus-within {
+  border-color: #439fee;
+}
+.contact form .input:focus ~ .label {
+  transform: translateX(0rem) translateY(-1.6rem);
+  font-size: 0.9rem;
+  color: #439fee;
+}
+.contact form .input:focus::-moz-placeholder {
+  color: transparent;
+  transform: 0.1s;
+}
+.contact form .input:focus::placeholder {
+  color: transparent;
+  transform: 0.1s;
+}
+.contact form .input:not(:focus):not(:-moz-placeholder-shown) ~ .label {
+  /*  color: transparent; */
+  color: rgba(93, 92, 92, 0);
+}
+.contact form .input:not(:focus):not(:placeholder-shown) ~ .label {
+  /*  color: transparent; */
+  color: rgba(93, 92, 92, 0);
+}
+.contact form .input:focus ~ .cut {
+  display: block;
+}
+.contact form .success {
+  background-color: green;
+  transition: all 0.3s;
+}
+.contact form .failed {
+  background-color: red;
+  transition: all 0.4s;
 }/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,173 @@
+@use "../variables";
+
+.contact {
+  margin: 15rem auto;
+  &-c {
+    @include variables.flex;
+    flex-direction: column;
+    &-title {
+      color: variables.$theme-color;
+      font-size: variables.$tbase;
+      font-family: var(--font-fira);
+      font-weight: 300;
+      &::before {
+        counter-increment: title;
+        content: "0" counter(title) ".";
+        margin-right: 0.5rem;
+        color: variables.$theme-color;
+      }
+    }
+    &-sub-title {
+      font-size: variables.$tgiant;
+      color: variables.$light-slate;
+      font-family: var(--font-raleway);
+    }
+    &-text {
+      color: variables.$slate;
+      font-size: variables.$tlarge;
+      text-align: center;
+      font-family: var(--font-raleway);
+      font-weight: 600;
+      letter-spacing: 0.07rem;
+      line-height: 1.6rem;
+    }
+  }
+  form {
+    max-width: 60%;
+    margin: 3rem auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 100px);
+    grid-template-areas:
+      "firstName lastName"
+      "email phone"
+      "message message"
+      "btn btn";
+    .ic1 {
+      grid-area: firstName;
+    }
+    .ic2 {
+      grid-area: lastName;
+    }
+    .ic3 {
+      grid-area: email;
+    }
+    .ic4 {
+      grid-area: phone;
+    }
+    .ic5 {
+      grid-area: message;
+      min-height: 13rem;
+    }
+    .ic6 {
+      grid-area: btn;
+      margin-top: 13rem;
+    }
+    #btn {
+      margin-top: 10rem;
+    }
+    .errorMessage {
+      text-align: center;
+      margin: 1rem auto;
+      min-width: 90%;
+      background-color: rgb(213, 98, 98);
+      height: 4rem;
+      margin-top: -3.05rem;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      transition: all 0.5s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: clamp(1.3rem, 2vw, 1.5rem);
+      letter-spacing: 1px;
+    }
+    .inputContainer {
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+    }
+    .ic6 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .label {
+      position: absolute;
+      top: 2rem;
+      left: 20px;
+      color: rgba(169, 161, 161, 0);
+      left: 1rem;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+    .input {
+      resize: none;
+      margin: 1rem 0;
+      padding: 1rem 1rem;
+      border: 1px solid variables.$theme-color;
+      min-width: 100%;
+      border-radius: 4px;
+      outline: 0;
+      background-color: transparent;
+      border-radius: 1rem;
+      color: #6e07f3;
+      font-size: clamp(1.1rem, 1.5vw, 1.2rem);
+    }
+    input {
+      max-height: 3rem;
+    }
+    .cut {
+      position: absolute;
+      width: 3rem;
+      height: 0.5rem;
+      top: 0.8rem;
+      left: 0.6rem;
+      display: none;
+    }
+    .short {
+      background-color: white;
+    }
+    .cuttel {
+      width: 5.2rem;
+    }
+    .cutpre {
+      width: 4.2rem;
+    }
+    .cutmes {
+      width: 4.4rem;
+    }
+    .input:focus-within {
+      border-color: #439fee;
+    }
+    .input:focus ~ .label {
+      transform: translateX(0rem) translateY(-1.6rem);
+      font-size: 0.9rem;
+      color: #439fee;
+    }
+    .input:focus::placeholder {
+      color: transparent;
+      transform: 0.1s;
+    }
+    /* touts les inputs qui n'ont pas de focus et qui'ils ont du text inside */
+    .input:not(:focus):not(:placeholder-shown) ~ .label {
+      /*  color: transparent; */
+      color: rgba(93, 92, 92, 0);
+    }
+    .input:focus ~ .cut {
+      display: block;
+    }
+    .success {
+      background-color: green;
+      transition: all 0.3s;
+    }
+
+    .failed {
+      background-color: red;
+      transition: all 0.4s;
+    }
+  }
+}

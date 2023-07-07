@@ -6,6 +6,7 @@ import Hero from "./sections/Hero.jsx";
 import About from "./sections/About.jsx";
 import Experience from "./sections/Experience.jsx";
 import Projects from "./sections/Projects.jsx";
+import Contact from "./sections/Contact.jsx";
 
 const page = () => {
   return (
@@ -18,6 +19,7 @@ const page = () => {
         <About />
         <Experience />
         <Projects />
+        <Contact />
       </main>
     </div>
   );
