@@ -1,0 +1,62 @@
+@use "../variables";
+.hero {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1rem;
+  &-title {
+    color: variables.$theme-color;
+    font-size: variables.$tsm2;
+    font-family: var(--font-fira);
+  }
+  &-title-large {
+    font-size: variables.$tgiant;
+    color: variables.$light-slate;
+  }
+  &-title-sub {
+    color: variables.$lightest-slate;
+  }
+  &-text {
+    color: variables.$slate;
+    font-size: variables.$tlarge;
+    letter-spacing: 0.07rem;
+    font-family: var(--font-raleway);
+    font-weight: 600;
+    line-height: 1.6rem;
+    margin-right: 40%;
+  }
+  &-link {
+    display: inline-block;
+    position: relative;
+    color: variables.$theme-color;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 0.1rem;
+      bottom: 0;
+      left: 0;
+      background-color: variables.$theme-color;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    &:hover,
+    &:focus {
+      &::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+  }
+  &-button {
+    margin-top: 2rem;
+    .btn {
+      font-size: variables.$tlarge;
+      font-family: var(--font-raleway);
+    }
+  }
+}

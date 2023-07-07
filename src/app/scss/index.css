@@ -155,4 +155,67 @@ nav .wrapper .nav-items-list-item a:hover {
   display: block;
   background-color: #ccd6f6;
   margin: 0 auto;
+}
+
+.hero {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1rem;
+}
+.hero-title {
+  color: #9d00ff;
+  font-size: 15px;
+  font-family: var(--font-fira);
+}
+.hero-title-large {
+  font-size: clamp(40px, 8vw, 80px);
+  color: #ccd6f6;
+}
+.hero-title-sub {
+  color: #a8b2d1;
+}
+.hero-text {
+  color: #8892b0;
+  font-size: 18px;
+  letter-spacing: 0.07rem;
+  font-family: var(--font-raleway);
+  font-weight: 600;
+  line-height: 1.6rem;
+  margin-right: 40%;
+}
+.hero-link {
+  display: inline-block;
+  position: relative;
+  color: #9d00ff;
+}
+.hero-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 0.1rem;
+  bottom: 0;
+  left: 0;
+  background-color: #9d00ff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.hero-link:hover::after, .hero-link:focus::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.hero-button {
+  margin-top: 2rem;
+}
+.hero-button .btn {
+  font-size: 18px;
+  font-family: var(--font-raleway);
+}
+
+main {
+  margin: 0 15rem;
 }/*# sourceMappingURL=index.css.map */
