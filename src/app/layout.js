@@ -1,8 +1,6 @@
 import "./globals.css";
 import "./scss/index.css";
-import { Inter, Raleway, Fira_Code, Fasthand } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Raleway, Fira_Code } from "next/font/google";
 
 const fira = Fira_Code({
   subsets: ["latin"],
@@ -17,7 +15,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className={`${fira.variable} ${raleway.variable}`}>{children}</body>
     </html>
   );

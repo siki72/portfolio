@@ -111,6 +111,9 @@ nav .wrapper .nav-items-list-item a:hover {
 .social-icons-list-item:hover {
   transform: translateY(-4px);
 }
+.social-icons-list-item:last-child {
+  margin-bottom: 3rem;
+}
 .social-icons::after {
   content: "";
   width: 2px;
@@ -118,5 +121,38 @@ nav .wrapper .nav-items-list-item a:hover {
   display: block;
   background-color: #ccd6f6;
   margin: 0 auto;
+}
+
+.email {
+  position: fixed;
+  bottom: 0;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.email-link {
+  writing-mode: vertical-rl;
+  color: #ccd6f6;
+  font-family: var(--font-fira);
+  letter-spacing: 0.1rem;
+  padding: 0.7rem;
+  outline: 2px dashed transparent;
+  transition: 0.3s ease-in-out;
+}
+.email-link:hover {
+  color: #9d00ff;
+}
+.email-link:focus {
+  outline-color: #9d00ff;
+  transform: translateY(-4px);
+  color: #9d00ff;
+}
+.email::after {
+  content: "";
+  width: 2px;
+  height: 5.625rem;
   display: block;
+  background-color: #ccd6f6;
+  margin: 0 auto;
 }/*# sourceMappingURL=index.css.map */

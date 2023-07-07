@@ -30,6 +30,9 @@
       &:hover {
         transform: translateY(-4px);
       }
+      &:last-child {
+        margin-bottom: 3rem;
+      }
     }
   }
   &::after {
@@ -39,6 +42,5 @@
     display: block;
     background-color: variables.$light-slate;
     margin: 0 auto;
-    display: block;
   }
 }
