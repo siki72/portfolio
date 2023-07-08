@@ -1,16 +1,16 @@
 "use client";
-import React, { useContext, useEffect, useRef, useState } from "react";
-import Image from "next/image.js";
+import React, { useEffect, useReducer, useRef } from "react";
 import validator from "validator";
 import emailjs from "@emailjs/browser";
+import { INTIAL_STATE, formReducer } from "@/reducers/formReducer.js";
+import { ACTIONS_TYPES } from "@/reducers/actionsType.js";
 
 const Contact = () => {
+  // call reducer
+  const [state, dispatch] = useReducer(formReducer, INTIAL_STATE);
   const form = useRef(null);
   const errorRef = useRef(null);
-  const [success, setSuccess] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [mailError, setMailError] = useState(false);
+
   useEffect(() => {
     if (success) {
       setTimeout(() => {
@@ -22,10 +22,10 @@ const Contact = () => {
         setError(false);
       }, 3000);
     }
-  }, [success, error]);
+  }, [state.success, state.error]);
   const sendEmail = async (e) => {
-    setLoading(true);
     e.preventDefault();
+    dispatch({ type: ACTIONS_TYPES.SEND_START });
     if (form.current) {
       const data = new FormData(form.current);
       const fields = {
@@ -43,16 +43,14 @@ const Contact = () => {
           (key === "Téléphone" && fieldValue.length < 10) ||
           fieldValue.length < 2
         ) {
-          setMailError(true);
+          dispatch({ type: ACTIONS_TYPES.WRONG_ENTRIES });
           await errorRef.current;
-          setLoading(false);
           return (errorRef.current.innerText = `Veuillez bien renseigner le champ : ${key}`);
         }
       }
       const email = data.get("email");
       if (!validator.isEmail(email)) {
-        setLoading(false);
-        setMailError(true);
+        dispatch({ type: ACTIONS_TYPES.WRONG_ENTRIES });
         await errorRef.current;
         errorRef.current.innerText = "Veuillez saisir un email valide";
         return;
@@ -67,17 +65,20 @@ const Contact = () => {
         .then(
           (result) => {
             if (result.status === 200) {
+              dispatch({ type: ACTIONS_TYPES.SEND_SUCCES });
               setSuccess(true);
               setLoading(false);
             }
           },
           (error) => {
-            setError(true);
+            dispatch({ type: ACTIONS_TYPES.EMAIL_ERROR });
             console.log(error);
-            setLoading(false);
           }
         );
     }
+  };
+  const handleHideError = () => {
+    return dispatch({ type: "" });
   };
   return (
     <section className="contact" id="contact">
@@ -90,7 +91,7 @@ const Contact = () => {
           assumenda nesciunt culpa quis.
         </p>
       </div>
-      <form onClick={() => setMailError(false)} onSubmit={sendEmail} ref={form}>
+      <form onClick={handleHideError} onSubmit={sendEmail} ref={form}>
         {mailError && (
           <div className="errorMessage">
             <span ref={errorRef}></span>
