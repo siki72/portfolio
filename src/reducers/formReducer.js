@@ -46,6 +46,7 @@ export const formReducer = (state, action) => {
       return {
         ...state,
         error: false,
+        mailError: false,
       };
       break;
 

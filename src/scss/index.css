@@ -745,7 +745,7 @@ main {
   outline: 0;
   background-color: transparent;
   border-radius: 1rem;
-  color: #6e07f3;
+  color: #a8b2d1;
   font-size: clamp(1.1rem, 1.5vw, 1.2rem);
 }
 .contact form .input::-moz-placeholder {
@@ -818,4 +818,47 @@ main {
 .contact form .failed {
   transition: all 0.4s;
   border: 2px solid rgb(218, 45, 45);
+}
+
+.loading-container {
+  min-width: 100svw;
+  min-height: 100svh;
+  position: fixed;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.485);
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: not-allowed;
+}
+
+.balls {
+  display: flex;
+}
+
+.ball {
+  width: 13px;
+  height: 13px;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 10px;
+  animation: ball 0.5s infinite alternate;
+}
+
+.ball2 {
+  animation-delay: 0.1s;
+}
+
+.ball3 {
+  animation-delay: 0.2s;
+}
+
+@keyframes ball {
+  to {
+    transform: translateY(-10px);
+  }
 }/*# sourceMappingURL=index.css.map */

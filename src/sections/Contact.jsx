@@ -4,6 +4,7 @@ import validator from "validator";
 import emailjs from "@emailjs/browser";
 import { INTIAL_STATE, formReducer } from "@/reducers/formReducer.js";
 import { ACTIONS_TYPES } from "@/reducers/actionsType.js";
+import Loading from "@/components/Loading.jsx";
 
 const Contact = () => {
   // call reducer
@@ -23,7 +24,12 @@ const Contact = () => {
         dispatch({ type: ACTIONS_TYPES.HIDE_ERROR });
       }, 3000);
     }
-  }, [state.success, state.error]);
+    if (state.mailError) {
+      setTimeout(() => {
+        dispatch({ type: ACTIONS_TYPES.HIDE_ERROR });
+      }, 3000);
+    }
+  }, [state.success, state.error, state.mailError]);
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -68,6 +74,7 @@ const Contact = () => {
         .then(
           (result) => {
             if (result.status === 200) {
+              form.current.reset();
               dispatch({ type: ACTIONS_TYPES.SEND_SUCCES });
             }
           },
@@ -84,6 +91,7 @@ const Contact = () => {
 
   return (
     <section className="contact" id="contact">
+      {state.loading && <Loading />}
       <div className="contact-c">
         <h2 className="contact-c-title">Et maintenant ?</h2>
         <h2 className="contact-c-sub-title">Get in touch</h2>
