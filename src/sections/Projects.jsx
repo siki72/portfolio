@@ -58,7 +58,7 @@ const Projects = () => {
     },
   ];
   return (
-    <div className="projects" id="work">
+    <section className="projects" id="work">
       <div className="title">
         <h2>Some Things I’ve Built</h2>
       </div>
@@ -119,7 +119,7 @@ const Projects = () => {
           }
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

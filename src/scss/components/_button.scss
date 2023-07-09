@@ -6,6 +6,7 @@
   border: 1px solid variables.$theme-color;
   border-radius: 4px;
   font-size: variables.$tsm;
+  cursor: pointer;
   &:hover,
   &:focus {
     background-color: variables.$lightest-navy;

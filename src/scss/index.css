@@ -99,6 +99,7 @@ nav .wrapper .nav-items-list-item a:hover {
   border: 1px solid #9d00ff;
   border-radius: 4px;
   font-size: 13px;
+  cursor: pointer;
 }
 .btn:hover, .btn:focus {
   background-color: #233554;
@@ -631,6 +632,8 @@ main {
   margin: 15rem auto;
 }
 .contact-c {
+  max-width: 60%;
+  margin: 5rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -736,7 +739,7 @@ main {
   resize: none;
   margin: 1rem 0;
   padding: 1rem 1rem;
-  border: 1px solid #9d00ff;
+  border: 2.5px solid #233554;
   min-width: 100%;
   border-radius: 4px;
   outline: 0;
@@ -745,8 +748,23 @@ main {
   color: #6e07f3;
   font-size: clamp(1.1rem, 1.5vw, 1.2rem);
 }
+.contact form .input::-moz-placeholder {
+  font-family: var(--font-fira);
+  font-size: 16px;
+  color: #a8b2d1;
+}
+.contact form .input::placeholder {
+  font-family: var(--font-fira);
+  font-size: 16px;
+  color: #a8b2d1;
+}
 .contact form input {
   max-height: 3rem;
+}
+.contact form .btn {
+  color: #a8b2d1;
+  font-family: var(--font-fira);
+  font-size: 16px;
 }
 .contact form .cut {
   position: absolute;
@@ -755,9 +773,7 @@ main {
   top: 0.8rem;
   left: 0.6rem;
   display: none;
-}
-.contact form .short {
-  background-color: white;
+  background-color: #0a192f;
 }
 .contact form .cuttel {
   width: 5.2rem;
@@ -769,12 +785,12 @@ main {
   width: 4.4rem;
 }
 .contact form .input:focus-within {
-  border-color: #439fee;
+  border-color: #9d00ff;
 }
 .contact form .input:focus ~ .label {
   transform: translateX(0rem) translateY(-1.6rem);
   font-size: 0.9rem;
-  color: #439fee;
+  color: #ccd6f6;
 }
 .contact form .input:focus::-moz-placeholder {
   color: transparent;
@@ -796,10 +812,10 @@ main {
   display: block;
 }
 .contact form .success {
-  background-color: green;
+  border: 2px solid rgb(38, 206, 38);
   transition: all 0.3s;
 }
 .contact form .failed {
-  background-color: red;
   transition: all 0.4s;
+  border: 2px solid rgb(218, 45, 45);
 }/*# sourceMappingURL=index.css.map */

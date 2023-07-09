@@ -1,5 +1,5 @@
 import "./globals.css";
-import "./scss/index.css";
+import "../scss/index.css";
 import { Raleway, Fira_Code } from "next/font/google";
 
 const fira = Fira_Code({

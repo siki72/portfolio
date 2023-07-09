@@ -35,6 +35,20 @@ export const formReducer = (state, action) => {
         loading: false,
       };
 
+    case "HIDE_MESSAGE":
+      return {
+        ...state,
+        success: false,
+      };
+      break;
+
+    case "HIDE_ERROR":
+      return {
+        ...state,
+        error: false,
+      };
+      break;
+
     default:
       return state;
       break;

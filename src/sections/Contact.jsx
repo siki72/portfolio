@@ -9,43 +9,46 @@ const Contact = () => {
   // call reducer
   const [state, dispatch] = useReducer(formReducer, INTIAL_STATE);
   const form = useRef(null);
-  const errorRef = useRef(null);
+  const errorRef = useRef();
+  let field = null;
 
   useEffect(() => {
-    if (success) {
+    if (state.success) {
       setTimeout(() => {
-        setSuccess(false);
+        dispatch({ type: ACTIONS_TYPES.HIDE_MESSAGE });
       }, 3000);
     }
-    if (error) {
+    if (state.error) {
       setTimeout(() => {
-        setError(false);
+        dispatch({ type: ACTIONS_TYPES.HIDE_ERROR });
       }, 3000);
     }
   }, [state.success, state.error]);
+
   const sendEmail = async (e) => {
     e.preventDefault();
     dispatch({ type: ACTIONS_TYPES.SEND_START });
     if (form.current) {
       const data = new FormData(form.current);
       const fields = {
-        Nom: "name",
-        Prénom: "lastName",
-        Email: "email",
-        Téléphone: "phone",
-        Message: "message",
+        firstName: "name",
+        lastName: "lastName",
+        email: "email",
+        phone: "phone",
+        message: "message",
       };
       for (const [key, value] of Object.entries(fields)) {
         const fieldValue = data.get(value);
+        field = document.getElementById(key);
         console.log(`${key} : ${fieldValue}`);
 
         if (
           (key === "Téléphone" && fieldValue.length < 10) ||
           fieldValue.length < 2
         ) {
+          field.classList.add("failed");
           dispatch({ type: ACTIONS_TYPES.WRONG_ENTRIES });
-          await errorRef.current;
-          return (errorRef.current.innerText = `Veuillez bien renseigner le champ : ${key}`);
+          return;
         }
       }
       const email = data.get("email");
@@ -66,8 +69,6 @@ const Contact = () => {
           (result) => {
             if (result.status === 200) {
               dispatch({ type: ACTIONS_TYPES.SEND_SUCCES });
-              setSuccess(true);
-              setLoading(false);
             }
           },
           (error) => {
@@ -77,9 +78,10 @@ const Contact = () => {
         );
     }
   };
-  const handleHideError = () => {
+  const handleHideError = (e) => {
     return dispatch({ type: "" });
   };
+
   return (
     <section className="contact" id="contact">
       <div className="contact-c">
@@ -92,11 +94,6 @@ const Contact = () => {
         </p>
       </div>
       <form onClick={handleHideError} onSubmit={sendEmail} ref={form}>
-        {mailError && (
-          <div className="errorMessage">
-            <span ref={errorRef}></span>
-          </div>
-        )}
         <div className="inputContainer ic1">
           <input
             type="text"
@@ -104,6 +101,7 @@ const Contact = () => {
             className="input"
             placeholder="Nom"
             name="name"
+            onFocus={(e) => e.target.classList.remove("failed")}
           />
           <div className="cut"></div>
           <label htmlFor="firstName" className="label">
@@ -117,6 +115,7 @@ const Contact = () => {
             className="input"
             placeholder="Prénom"
             name="lastName"
+            onFocus={(e) => e.target.classList.remove("failed")}
           />
           <div className="cut cutpre"></div>
           <label htmlFor="lastName" className="label">
@@ -130,6 +129,7 @@ const Contact = () => {
             className="input"
             placeholder="Email"
             name="email"
+            onFocus={(e) => e.target.classList.remove("failed")}
           />
           <div className="cut short"></div>
           <label htmlFor="email" className="label">
@@ -143,6 +143,7 @@ const Contact = () => {
             className="input"
             placeholder="Téléphone"
             name="phone"
+            onFocus={(e) => e.target.classList.remove("failed")}
           />
           <div className="cut cuttel"></div>
           <label htmlFor="phone" className="label">
@@ -157,6 +158,7 @@ const Contact = () => {
             placeholder="Message"
             name="message"
             id="message"
+            onFocus={(e) => e.target.classList.remove("failed")}
           />
           <div className="cut cutmes"></div>
           <label htmlFor="message" className="label">
@@ -166,12 +168,14 @@ const Contact = () => {
         <div className="inputContainer ic6">
           <button
             id="btn"
-            className={`btn ${success ? "success" : ""}`}
+            className={`btn ${state.success ? "success" : ""} ${
+              state.mailError ? "failed" : ""
+            } `}
             type="submit"
           >
-            {!success && !error && "Envoyer"}
-            {success ? "Votre message à été envoyé avec succès" : ""}
-            {error ? "Echec d'envoi, ressayer plus tard" : ""}
+            {!state.success && !state.mailError && "Envoyer"}
+            {state.success ? "Votre message à été envoyé avec succès" : ""}
+            {state.mailError ? "Echec d'envoi, ressayer plus tard" : ""}
           </button>
         </div>
       </form>

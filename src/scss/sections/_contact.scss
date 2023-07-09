@@ -3,6 +3,8 @@
 .contact {
   margin: 15rem auto;
   &-c {
+    max-width: 60%;
+    margin: 5rem auto;
     @include variables.flex;
     flex-direction: column;
     &-title {
@@ -108,7 +110,7 @@
       resize: none;
       margin: 1rem 0;
       padding: 1rem 1rem;
-      border: 1px solid variables.$theme-color;
+      border: 2.5px solid variables.$lightest-navy;
       min-width: 100%;
       border-radius: 4px;
       outline: 0;
@@ -117,8 +119,18 @@
       color: #6e07f3;
       font-size: clamp(1.1rem, 1.5vw, 1.2rem);
     }
+    .input::placeholder {
+      font-family: var(--font-fira);
+      font-size: variables.$tbase;
+      color: variables.$lightest-slate;
+    }
     input {
       max-height: 3rem;
+    }
+    .btn {
+      color: variables.$lightest-slate;
+      font-family: var(--font-fira);
+      font-size: variables.$tbase;
     }
     .cut {
       position: absolute;
@@ -127,9 +139,7 @@
       top: 0.8rem;
       left: 0.6rem;
       display: none;
-    }
-    .short {
-      background-color: white;
+      background-color: variables.$background-color;
     }
     .cuttel {
       width: 5.2rem;
@@ -141,12 +151,12 @@
       width: 4.4rem;
     }
     .input:focus-within {
-      border-color: #439fee;
+      border-color: variables.$theme-color;
     }
     .input:focus ~ .label {
       transform: translateX(0rem) translateY(-1.6rem);
       font-size: 0.9rem;
-      color: #439fee;
+      color: variables.$light-slate;
     }
     .input:focus::placeholder {
       color: transparent;
@@ -161,13 +171,13 @@
       display: block;
     }
     .success {
-      background-color: green;
+      border: 2px solid rgb(38, 206, 38);
       transition: all 0.3s;
     }
 
     .failed {
-      background-color: red;
       transition: all 0.4s;
+      border: 2px solid rgb(218, 45, 45);
     }
   }
 }
