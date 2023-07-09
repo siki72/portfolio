@@ -6,15 +6,14 @@ const Hero = () => {
   return (
     <section className="hero">
       <h1 className="hero-title">Bonjour, je m&apos;appelle</h1>
-      <h2 className="hero-title-large">Ali Missoum</h2>
+      <h2 className="hero-title-large">Ali Missoum.</h2>
       <h3 className="hero-title-large hero-title-sub">
-        I craft things for web.
+        Développeur web full-stack.
       </h3>
       <p className="hero-text">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. In vel, ullam
-        at optio aperiam nam sit recusandae error libero quam quos repudiandae
-        consectetur ex molestiae rerum quod beatae&nbsp;
-        <Link className="hero-link" href="/#projets">
+        Node / Express / SQL / JavaScript / React / Nextjs, créons une interface
+        web moderne, offrant une expérience utilisateur optimale&nbsp;
+        <Link className="hero-link" href="/#work">
           Projets.
         </Link>
       </p>
