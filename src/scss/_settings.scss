@@ -29,3 +29,14 @@ body {
     }
   }
 }
+
+::-webkit-scrollbar {
+  &-track {
+    background-color: variables.$background-color;
+  }
+  &-thumb {
+    background-color: variables.$dark-slate;
+    border: 3px solid variables.$background-color;
+    border-radius: 10px;
+  }
+}

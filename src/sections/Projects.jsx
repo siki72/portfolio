@@ -77,7 +77,13 @@ const Projects = () => {
                 <div className="project-image">
                   <div className="project-image-overlay"></div>
                   <div className="project-image-container">
-                    <Image src={image} fill alt={projectName} quality={100} />
+                    <Image
+                      src={image}
+                      fill
+                      alt={projectName}
+                      quality={100}
+                      loading="lazy"
+                    />
                   </div>
                 </div>
                 <div className="project-info">
