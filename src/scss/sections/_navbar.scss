@@ -55,7 +55,7 @@ nav {
       }
     }
   }
-  .blur {
+  .blurNav {
     height: 80px;
     position: fixed;
     top: 0;
@@ -64,5 +64,32 @@ nav {
     background-color: rgba(10, 25, 47, 0.85);
     box-shadow: 0 10px 30px -10px variables.$navy-shadow;
     backdrop-filter: blur(10px);
+  }
+  .btnContainer {
+    z-index: 3;
+  }
+
+  .btn {
+    background: transparent;
+    border-radius: 0.3rem;
+    border: 2px solid;
+    cursor: pointer;
+  }
+  .line {
+    transition: y 300ms ease-in, rotate 300ms ease-in 300ms, opacity 0ms 300ms;
+    transform-origin: center;
+  }
+
+  .btn :is(.top, .bottom) {
+    y: 45;
+  }
+  .btn .top {
+    rotate: 45deg;
+  }
+  .btn .middle {
+    opacity: 0;
+  }
+  .btn .bottom {
+    rotate: -45deg;
   }
 }

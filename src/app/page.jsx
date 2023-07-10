@@ -28,7 +28,7 @@ const Page = () => {
         <Hero />
 
         <About />
-
+        <Experience />
         <Projects />
 
         <Contact />

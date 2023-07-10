@@ -100,7 +100,7 @@ nav .wrapper .nav-items-list-item a:focus {
 nav .wrapper .nav-items-list-item a:hover {
   color: #9d00ff;
 }
-nav .blur {
+nav .blurNav {
   height: 80px;
   position: fixed;
   top: 0;
@@ -110,6 +110,31 @@ nav .blur {
   box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
+}
+nav .btnContainer {
+  z-index: 3;
+}
+nav .btn {
+  background: transparent;
+  border-radius: 0.3rem;
+  border: 2px solid;
+  cursor: pointer;
+}
+nav .line {
+  transition: y 300ms ease-in, rotate 300ms ease-in 300ms, opacity 0ms 300ms;
+  transform-origin: center;
+}
+nav .btn :is(.top, .bottom) {
+  y: 45;
+}
+nav .btn .top {
+  rotate: 45deg;
+}
+nav .btn .middle {
+  opacity: 0;
+}
+nav .btn .bottom {
+  rotate: -45deg;
 }
 
 .btn {
@@ -266,6 +291,15 @@ nav .blur {
 
 main {
   margin: 0 14rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.blur {
+  filter: blur(10px);
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .about {
