@@ -3,7 +3,7 @@ import Logo from "@/components/Logo.jsx";
 import Link from "next/link.js";
 import React, { useEffect, useState } from "react";
 import Button from "../components/Button.jsx";
-
+import { motion } from "framer-motion";
 const Navbar = () => {
   const datas = [
     { name: "A propos", link: "/#about" },
@@ -39,9 +39,15 @@ const Navbar = () => {
     if (isOpen) {
       html?.addEventListener("click", (e) => {
         console.log("html");
-        setIsOpen(false);
+        setIsOpen(!isOpen);
       });
     }
+    const btn = document.querySelector(".btnContainer");
+    btn.addEventListener("click", (e) => {
+      console.log("btn");
+      e.stopPropagation();
+      setIsOpen(!isOpen);
+    });
     return;
   }, [isOpen]);
 
@@ -57,20 +63,30 @@ const Navbar = () => {
   return (
     <nav>
       <div className={`wrapper ${isVisible ? "blurNav" : ""}`}>
-        <div className="brand">
+        <motion.div
+          className="brand"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
           <Link href="/">
             <Logo />
           </Link>
-        </div>
+        </motion.div>
 
-        <div
+        <motion.div
           className="btnContainer"
           onClick={(e) => {
-            setIsOpen(!isOpen);
+            setIsOpen((isOpen) => !isOpen);
             e.stopPropagation();
           }}
         >
-          <button className="btn btnone">
+          <button
+            className="btn btnone"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
             <svg className="hamburger" viewBox="0 0 100 100" width={30}>
               <rect
                 className={isOpen ? "line top" : "line"}
@@ -98,21 +114,36 @@ const Navbar = () => {
               ></rect>
             </svg>
           </button>
-        </div>
+        </motion.div>
 
         <div className="nav-items">
           <ul className="nav-items-list">
-            {datas.map(({ name, link }) => (
-              <li key={name} className="nav-items-list-item">
+            {datas.map(({ name, link }, index) => (
+              <motion.li
+                key={name}
+                className="nav-items-list-item"
+                initial={{ opacity: 0, y: -25 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.3,
+                  ease: "easeInOut",
+                  delay: 0.3 + index * 0.1,
+                }}
+              >
                 <Link href={link} className="nav-items-list-item-link">
                   {name}
                 </Link>
-              </li>
+              </motion.li>
             ))}
           </ul>
-          <div className="nav-items-button">
+          <motion.div
+            className="nav-items-button"
+            initial={{ opacity: 0, y: -25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut", delay: 0.8 }}
+          >
             <Button text="CV" link="http://localhost:3000/cv.pdf" />
-          </div>
+          </motion.div>
         </div>
       </div>
     </nav>

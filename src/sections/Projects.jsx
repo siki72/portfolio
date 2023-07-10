@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image.js";
 import Link from "next/link.js";
 import React from "react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { motion } from "framer-motion";
 const Projects = () => {
   const projectsData = [
     {
@@ -58,7 +60,19 @@ const Projects = () => {
     },
   ];
   return (
-    <section className="projects" id="work">
+    <motion.section
+      className="projects"
+      id="work"
+      whileInView="visible"
+      whileHover={{ scale: 1.1 }}
+      initial="hidden"
+      viewport={{ once: true }}
+      transition={{ duration: 1, ease: "easeInOut" }}
+      variants={{
+        visible: { opacity: 1, x: 0, scale: 1 },
+        hidden: { opacity: 0, x: 400, scale: 1 },
+      }}
+    >
       <div className="title">
         <h2>Some Things I’ve Built</h2>
       </div>
@@ -125,7 +139,7 @@ const Projects = () => {
           }
         )}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

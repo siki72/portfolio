@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link.js";
 import React, { useEffect, useRef, useState } from "react";
-
+import { motion } from "framer-motion";
 const Experience = () => {
   const underlineRef = useRef(null);
   const [selected, setSelected] = useState(0);
@@ -36,7 +36,19 @@ const Experience = () => {
     },
   ];
   return (
-    <section className="experience" id="experience">
+    <motion.section
+      className="experience"
+      id="experience"
+      whileInView="visible"
+      whileHover={{ scale: 1.1 }}
+      initial="hidden"
+      viewport={{ once: true }}
+      transition={{ duration: 1, ease: "easeInOut" }}
+      variants={{
+        visible: { opacity: 1, x: 0, scale: 1 },
+        hidden: { opacity: 0, x: -400, scale: 1 },
+      }}
+    >
       <div className="title">
         <h2>voila</h2>
       </div>
@@ -82,7 +94,7 @@ const Experience = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

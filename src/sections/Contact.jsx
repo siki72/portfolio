@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import { INTIAL_STATE, formReducer } from "@/reducers/formReducer.js";
 import { ACTIONS_TYPES } from "@/reducers/actionsType.js";
 import Loading from "@/components/Loading.jsx";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   // call reducer
@@ -102,7 +103,19 @@ const Contact = () => {
           assumenda nesciunt culpa quis.
         </p>
       </div>
-      <form onClick={handleHideError} onSubmit={sendEmail} ref={form}>
+      <motion.form
+        onClick={handleHideError}
+        onSubmit={sendEmail}
+        ref={form}
+        whileInView="visible"
+        initial="hidden"
+        viewport={{ once: true }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        variants={{
+          visible: { opacity: 1, y: 0, scale: 1 },
+          hidden: { opacity: 0, y: 200, scale: 0.5 },
+        }}
+      >
         <div className="inputContainer ic1">
           <input
             type="text"
@@ -187,7 +200,7 @@ const Contact = () => {
             {state.mailError ? "Echec d'envoi, ressayer plus tard" : ""}
           </button>
         </div>
-      </form>
+      </motion.form>
     </section>
   );
 };
