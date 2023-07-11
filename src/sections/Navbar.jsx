@@ -63,16 +63,16 @@ const Navbar = () => {
   return (
     <nav>
       <div className={`wrapper ${isVisible ? "blurNav" : ""}`}>
-        <motion.div
+        <div
           className="brand"
-          initial={{ opacity: 0 }}
+          /* initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          transition={{ duration: 0.3, ease: "easeInOut" }} */
         >
           <Link href="/">
             <Logo />
           </Link>
-        </motion.div>
+        </div>
 
         <motion.div
           className="btnContainer"

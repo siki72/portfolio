@@ -12,6 +12,8 @@ nav {
         @include variables.flex;
         fill: none;
         margin: 2rem 0;
+        height: 4rem;
+        width: 4rem;
         transition: 0.3s ease-in-out;
         outline: 2px dashed transparent;
         cursor: pointer;
@@ -91,5 +93,8 @@ nav {
   }
   .btn .bottom {
     rotate: -45deg;
+  }
+  .btnContainer {
+    display: none;
   }
 }

@@ -1,5 +1,7 @@
 @use "../variables";
 #logo {
   color: variables.$theme-color;
-  height: 4rem;
+  height: 100%;
+  width: 100%;
+  fill: none;
 }

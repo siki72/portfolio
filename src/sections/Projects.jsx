@@ -64,7 +64,6 @@ const Projects = () => {
       className="projects"
       id="work"
       whileInView="visible"
-      whileHover={{ scale: 1.1 }}
       initial="hidden"
       viewport={{ once: true }}
       transition={{ duration: 1, ease: "easeInOut" }}
@@ -92,6 +91,7 @@ const Projects = () => {
                   <div className="project-image-overlay"></div>
                   <div className="project-image-container">
                     <Image
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       src={image}
                       fill
                       alt={projectName}

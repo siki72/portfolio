@@ -1,0 +1,10 @@
+@use "../variables";
+.loader {
+  height: 90vh;
+  @include variables.flex;
+  overflow: hidden;
+  svg {
+    max-height: 10rem;
+    max-width: 10rem;
+  }
+}

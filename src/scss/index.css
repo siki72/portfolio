@@ -40,7 +40,9 @@ body {
 
 #logo {
   color: #9d00ff;
-  height: 4rem;
+  height: 100%;
+  width: 100%;
+  fill: none;
 }
 
 nav {
@@ -61,6 +63,8 @@ nav .wrapper .brand a {
   align-items: center;
   fill: none;
   margin: 2rem 0;
+  height: 4rem;
+  width: 4rem;
   transition: 0.3s ease-in-out;
   outline: 2px dashed transparent;
   cursor: pointer;
@@ -135,6 +139,9 @@ nav .btn .middle {
 }
 nav .btn .bottom {
   rotate: -45deg;
+}
+nav .btnContainer {
+  display: none;
 }
 
 .btn {
@@ -915,4 +922,31 @@ main {
   to {
     transform: translateY(-10px);
   }
+}
+.loader {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.loader svg {
+  max-height: 10rem;
+  max-width: 10rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.footer .text-box p {
+  font-family: var(--font-fira);
+  line-height: 2rem;
+  color: #9d00ff;
+  padding: 2rem 0;
+}
+.footer .text-box p span {
+  color: #a8b2d1;
 }/*# sourceMappingURL=index.css.map */

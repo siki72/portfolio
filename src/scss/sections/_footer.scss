@@ -1,0 +1,16 @@
+@use "../variables";
+.footer {
+  @include variables.flex;
+  text-align: center;
+  .text-box {
+    p {
+      font-family: var(--font-fira);
+      line-height: 2rem;
+      color: variables.$theme-color;
+      padding: 2rem 0;
+      span {
+        color: variables.$lightest-slate;
+      }
+    }
+  }
+}
