@@ -581,8 +581,15 @@ main {
 }
 .projects-container .project-image-container {
   position: relative;
-  width: 600px;
+  width: 700px;
   height: 400px;
+}
+.projects-container .project-image-container-img {
+  -o-object-position: top left;
+     object-position: top left;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
 }
 .projects-container .project-image:hover .project-image-overlay {
   background-color: rgba(0, 0, 0, 0.151);

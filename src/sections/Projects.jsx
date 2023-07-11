@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const projectsData = [
     {
-      image: "/project-1.jpeg",
+      image: "/project1.webp",
       projectName: "Sunshine villas",
       projectLink: "https://netlify.com",
       projectDescription:
-        "Une App de réservation,elle offre la possibilité de consulter les disponibilités et réserver en liogne, avec un système de paiement sécurisé. Elle offre un tableau de bord complet pour gérer les réservations, les arrivées .. ",
+        "Une App de réservation, elle offre la possibilité de consulter les disponibilités et réserver en ligne, avec un système de paiement sécurisé. Elle offre un tableau de bord complet pour gérer l'établissement. ",
       projectTech: [
         "NodeJs",
         "MySQL",
@@ -27,11 +27,11 @@ const Projects = () => {
       },
     },
     {
-      image: "/project2.jpeg",
+      image: "/newproject2.webp",
       projectName: "Hikaya",
       projectLink: "https://netlify.com",
       projectDescription:
-        "Hikaya est une app de messagerie instantané. Elle offre la possibilité de savoir si un utilisateur est en ligne, si vos messages ont été lus par vos destinataires avec le fameux lu, et l'incontournable .. est en train d'écrire.",
+        "Hikaya est une app de messagerie instantanée. Elle offre la possibilité de savoir si un utilisateur est en ligne, si vos messages ont été lus par vos destinataires avec le fameux lu, et l'incontournable. est en train d'écrire.",
       projectTech: [
         "Nodejs",
         "MongoDB",
@@ -47,7 +47,7 @@ const Projects = () => {
       },
     },
     {
-      image: "/project-3.jpeg",
+      image: "/project3.webp",
       projectName: "Netflix App",
       projectLink: "https://netlify.com",
       projectDescription:
@@ -69,11 +69,11 @@ const Projects = () => {
       transition={{ duration: 1, ease: "easeInOut" }}
       variants={{
         visible: { opacity: 1, x: 0, scale: 1 },
-        hidden: { opacity: 0, x: 400, scale: 1 },
+        hidden: { opacity: 0, x: 100, scale: 1 },
       }}
     >
       <div className="title">
-        <h2>Some Things I’ve Built</h2>
+        <h2>Quelques Projets</h2>
       </div>
       <div className="projects-container">
         {projectsData.map(
@@ -88,17 +88,23 @@ const Projects = () => {
             return (
               <div className="project" key={projectName}>
                 <div className="project-image">
-                  <div className="project-image-overlay"></div>
-                  <div className="project-image-container">
+                  <motion.div
+                    className="project-image-container"
+                    whileHover={{ zIndex: 10 }}
+                    transition={{
+                      ease: "easeInOut",
+                      duration: 1,
+                    }}
+                  >
                     <Image
+                      className="project-image-container-img"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       src={image}
-                      fill
+                      fill={true}
                       alt={projectName}
-                      quality={100}
                       loading="lazy"
                     />
-                  </div>
+                  </motion.div>
                 </div>
                 <div className="project-info">
                   <p className="project-info-overline">Featured Project</p>

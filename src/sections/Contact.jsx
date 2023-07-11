@@ -98,9 +98,8 @@ const Contact = () => {
         <h2 className="contact-c-title">Et maintenant ?</h2>
         <h2 className="contact-c-sub-title">Get in touch</h2>
         <p className="contact-c-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fuga, ipsa
-          ratione dignissimos hic quos qui excepturi dolorum eius. Hic sint
-          assumenda nesciunt culpa quis.
+          Je suis actuellement à la recherche &apos;opportunités
+          professionnelles. N&apos;hésitez pas à me contacter !
         </p>
       </div>
       <motion.form

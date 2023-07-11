@@ -16,7 +16,8 @@ function Logo() {
         </text>
         <path
           stroke="currentColor"
-          strokeWidth="5"
+          strokeWidth="2"
+          strokeDasharray="3 3"
           strokeLinecap="round"
           strokeLinejoin="round"
           d="M 50, 5

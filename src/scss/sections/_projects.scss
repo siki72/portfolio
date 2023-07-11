@@ -38,8 +38,13 @@
       &-image {
         &-container {
           position: relative;
-          width: 600px;
+          width: 700px;
           height: 400px;
+          &-img {
+            object-position: top left;
+            object-fit: cover;
+            border-radius: 1rem;
+          }
         }
         border-radius: 0.2rem;
         position: absolute;
