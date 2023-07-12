@@ -396,7 +396,6 @@ nav .btnContainer {
 @media screen and (max-width: 1008px) {
   .hero-text {
     font-size: 0.9rem;
-    margin-right: 20%;
   }
 }
 @media screen and (max-width: 551px) {
@@ -610,6 +609,11 @@ main {
   min-width: 43.75rem;
   min-height: 35rem;
 }
+@media screen and (max-width: 955px) {
+  .experience {
+    margin-bottom: 26rem;
+  }
+}
 .experience .title {
   font-family: var(--font-raleway);
   color: #a8b2d1;
@@ -630,7 +634,7 @@ main {
   content: "";
   position: absolute;
   top: 20px;
-  width: 300px;
+  width: 40%;
   background-color: #171718;
   height: 2px;
   margin-left: 3rem;
@@ -640,20 +644,42 @@ main {
   grid-template-columns: 20% 80%;
   gap: 1rem;
 }
+@media screen and (max-width: 955px) {
+  .experience .container {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+  }
+}
 .experience .container .exp-slider {
   position: relative;
   height: -moz-max-content;
   height: max-content;
 }
+@media screen and (max-width: 955px) {
+  .experience .container .exp-slider {
+    display: flex;
+    margin: 2rem 0;
+  }
+}
 .experience .container .exp-slider .underline {
   background-color: #f86f03;
   position: absolute;
-  left: -0.5px;
+  left: -0.55px;
   top: 0;
   width: 3px;
   height: 2.5rem;
   transition: 0.3s ease-in-out;
   border-radius: 0.2rem;
+}
+@media screen and (max-width: 955px) {
+  .experience .container .exp-slider .underline {
+    top: 0;
+    height: 3px;
+    width: 7rem;
+    left: 7rem;
+    right: unset;
+  }
 }
 .experience .container .exp-slider::before {
   position: absolute;
@@ -663,13 +689,17 @@ main {
   background-color: #171718;
   width: 1px;
 }
+@media screen and (max-width: 955px) {
+  .experience .container .exp-slider::before {
+    display: none;
+  }
+}
 .experience .container .exp-slider-item {
   height: 2.5rem;
   padding: 0 1.5rem;
   display: flex;
   vertical-align: middle;
   cursor: pointer;
-  width: 100%;
 }
 .experience .container .exp-slider-item span {
   display: flex;
@@ -703,7 +733,36 @@ main {
   gap: 1rem;
   margin-top: 1rem;
   padding-left: 1.4rem;
-  margin-right: 20%;
+}
+@media screen and (max-width: 881px) {
+  .experience .container .exp-details-list {
+    max-width: 70%;
+  }
+}
+@media screen and (max-width: 772px) {
+  .experience .container .exp-details-list {
+    max-width: 65%;
+  }
+}
+@media screen and (max-width: 725px) {
+  .experience .container .exp-details-list {
+    max-width: 99%;
+  }
+}
+@media screen and (max-width: 638px) {
+  .experience .container .exp-details-list {
+    max-width: 91%;
+  }
+}
+@media screen and (max-width: 590px) {
+  .experience .container .exp-details-list {
+    max-width: 75%;
+  }
+}
+@media screen and (max-width: 545px) {
+  .experience .container .exp-details-list {
+    max-width: 65%;
+  }
 }
 .experience .container .exp-details-list-item {
   position: relative;
@@ -711,12 +770,20 @@ main {
   color: #8892b0;
   line-height: 1.5rem;
 }
+@media screen and (max-width: 955px) {
+  .experience .container .exp-details-list-item {
+    font-size: 0.9rem;
+  }
+}
 .experience .container .exp-details-list-item::before {
   content: "◌";
   position: absolute;
   top: 0px;
   left: -20px;
   color: #f86f03;
+}
+.experience .container .exp-details-list-item p {
+  max-width: 80%;
 }
 
 .projects {

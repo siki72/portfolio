@@ -5,12 +5,25 @@ import { motion } from "framer-motion";
 const Experience = () => {
   const underlineRef = useRef(null);
   const [selected, setSelected] = useState(0);
+  const screenWidth = window.innerWidth;
   useEffect(() => {
     const seletedTab = () => {
-      underlineRef.current.style.top = `${selected * 2.5}rem`;
+      if (screenWidth > 950) {
+        console.log("oui");
+        underlineRef.current.style.top = `${selected * 2.5}rem`;
+      } else {
+        underlineRef.current.style.left = `${selected * 8}rem`;
+      }
     };
     seletedTab();
-  }, [selected]);
+    return () => {
+      if (screenWidth > 950) {
+        underlineRef.current.style.top = "0";
+      } else {
+        underlineRef.current.style.left = "0";
+      }
+    };
+  }, [selected, screenWidth]);
   const expereinces = [
     {
       name: "Sycatle",
@@ -86,7 +99,7 @@ const Experience = () => {
             <ul className="exp-details-list">
               {expereinces[selected].Déscription.map((desc, index) => (
                 <li key={index} className="exp-details-list-item">
-                  {desc}
+                  <p>{desc}</p>
                 </li>
               ))}
             </ul>

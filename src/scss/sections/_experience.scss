@@ -3,6 +3,9 @@
   margin: 15rem auto;
   min-width: 43.75rem;
   min-height: 35rem;
+  @media screen and (max-width: 955px) {
+    margin-bottom: 26rem;
+  }
   .title {
     font-family: var(--font-raleway);
     color: variables.$lightest-slate;
@@ -21,7 +24,7 @@
         content: "";
         position: absolute;
         top: 20px;
-        width: 300px;
+        width: 40%;
         background-color: variables.$lightest-navy;
         height: 2px;
         margin-left: 3rem;
@@ -29,16 +32,32 @@
     }
   }
   .container {
+    @media screen and (max-width: 955px) {
+      display: flex;
+      flex-direction: column;
+      text-align: justify;
+    }
     display: grid;
     grid-template-columns: 20% 80%;
     gap: 1rem;
     .exp-slider {
+      @media screen and (max-width: 955px) {
+        display: flex;
+        margin: 2rem 0;
+      }
       position: relative;
       height: max-content;
       .underline {
+        @media screen and (max-width: 955px) {
+          top: 0;
+          height: 3px;
+          width: 7rem;
+          left: 7rem;
+          right: unset;
+        }
         background-color: variables.$theme-color;
         position: absolute;
-        left: -0.5px;
+        left: -0.55px;
         top: 0;
         width: 3px;
         height: 2.5rem;
@@ -46,6 +65,9 @@
         border-radius: 0.2rem;
       }
       &::before {
+        @media screen and (max-width: 955px) {
+          display: none;
+        }
         position: absolute;
         content: "";
         left: 0;
@@ -59,7 +81,6 @@
         display: flex;
         vertical-align: middle;
         cursor: pointer;
-        width: 100%;
         span {
           @include variables.flex;
           color: variables.$slate;
@@ -88,13 +109,38 @@
         }
       }
       &-list {
+        @media screen and (max-width: 881px) {
+          max-width: 70%;
+        }
+        @media screen and (max-width: 772px) {
+          max-width: 65%;
+        }
+        @media screen and (max-width: 725px) {
+          max-width: 99%;
+        }
+        @media screen and (max-width: 638px) {
+          max-width: 91%;
+        }
+        @media screen and (max-width: 590px) {
+          max-width: 75%;
+        }
+        @media screen and (max-width: 545px) {
+          max-width: 65%;
+        }
         display: flex;
         flex-direction: column;
         gap: 1rem;
         margin-top: 1rem;
         padding-left: 1.4rem;
-        margin-right: 20%;
         &-item {
+          @media screen and (max-width: 955px) {
+            font-size: 0.9rem;
+          }
+          @media screen and (max-width: 767px) {
+          }
+          @media screen and (min-width: 554px) {
+          }
+
           position: relative;
           font-weight: 500;
           color: variables.$slate;
@@ -105,6 +151,9 @@
             top: 0px;
             left: -20px;
             color: variables.$theme-color;
+          }
+          & p {
+            max-width: 80%;
           }
         }
       }
