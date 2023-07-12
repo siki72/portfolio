@@ -144,7 +144,6 @@ nav .blurNav {
   top: 0;
   transition: all 0.3s ease-in-out;
   z-index: 20;
-  background-color: rgba(10, 25, 47, 0.85);
   box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -216,6 +215,15 @@ nav .btnContainer {
     width: 5rem;
   }
 }
+@media screen and (max-width: 425px) {
+  .social-icons {
+    position: absolute;
+    bottom: 2rem;
+    right: 50%;
+    top: unset;
+    transform: translate(-50%);
+  }
+}
 .social-icons-list {
   display: flex;
   flex-direction: column;
@@ -224,6 +232,12 @@ nav .btnContainer {
 @media screen and (max-width: 725px) {
   .social-icons-list {
     display: flex;
+  }
+}
+@media screen and (max-width: 425px) {
+  .social-icons-list {
+    display: flex;
+    flex-direction: row;
   }
 }
 .social-icons-list-item {
@@ -446,6 +460,11 @@ main {
     margin: 0 4rem;
   }
 }
+@media screen and (max-width: 425px) {
+  main {
+    margin: 0 1.3rem;
+  }
+}
 
 .blur {
   filter: blur(10px);
@@ -468,6 +487,11 @@ main {
   font-size: 32px;
   font-weight: 700;
 }
+@media screen and (max-width: 425px) {
+  .about .title h2 {
+    font-size: 1.7rem;
+  }
+}
 .about .title h2::before {
   counter-increment: title;
   content: "0" counter(title) ".";
@@ -482,6 +506,11 @@ main {
   background-color: #171718;
   height: 2px;
   margin-left: 3rem;
+}
+@media screen and (max-width: 425px) {
+  .about .title h2::after {
+    display: none;
+  }
 }
 .about-grid {
   display: grid;
@@ -501,6 +530,11 @@ main {
   .about-grid .about-grid-info {
     grid-area: text;
     text-align: justify;
+  }
+}
+@media screen and (max-width: 425px) {
+  .about-grid {
+    grid-template-rows: 3rem 1fr;
   }
 }
 .about-grid-info {
@@ -596,6 +630,12 @@ main {
   position: relative;
   height: 556px;
   width: 345px;
+}
+@media screen and (max-width: 375px) {
+  .about-grid-photo-container {
+    height: 450px;
+    width: 270px;
+  }
 }
 .about-grid-photo-container img {
   z-index: 0;
@@ -764,6 +804,16 @@ main {
     max-width: 65%;
   }
 }
+@media screen and (max-width: 425px) {
+  .experience .container .exp-details-list {
+    max-width: 65%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .experience .container .exp-details-list {
+    max-width: 57%;
+  }
+}
 .experience .container .exp-details-list-item {
   position: relative;
   font-weight: 500;
@@ -867,6 +917,12 @@ main {
     height: 250px;
   }
 }
+@media screen and (max-width: 425px) {
+  .projects-container .project-image-container {
+    width: 350px;
+    height: 250px;
+  }
+}
 .projects-container .project-image-container-img {
   -o-object-position: top left;
      object-position: top left;
@@ -925,16 +981,17 @@ main {
   color: #a8b2d1;
   font-family: var(--font-raleway);
   padding: 2rem;
+  line-height: 1.5rem;
   text-align: justify;
 }
 @media screen and (max-width: 1115px) {
   .projects-container .project-info-description p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 930px) {
   .projects-container .project-info-description p {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     letter-spacing: 1px;
     line-height: 1.2rem;
   }
@@ -991,6 +1048,11 @@ main {
   right: 0;
   left: initial;
 }
+@media screen and (max-width: 425px) {
+  .projects-container .project:nth-of-type(even) .project-image {
+    right: unset;
+  }
+}
 .projects-container .project:nth-of-type(even) .project-info {
   align-items: flex-start;
 }
@@ -1008,6 +1070,11 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+@media screen and (max-width: 1203px) {
+  .contact-c {
+    max-width: unset;
+  }
 }
 .contact-c-title {
   color: #f86f03;
@@ -1035,6 +1102,16 @@ main {
   letter-spacing: 0.07rem;
   line-height: 1.6rem;
 }
+@media screen and (max-width: 1028px) {
+  .contact-c-text {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .contact-c-text {
+    font-size: 0.8rem;
+  }
+}
 .contact form {
   max-width: 60%;
   margin: 3rem auto;
@@ -1044,6 +1121,13 @@ main {
   grid-template-rows: repeat(4, 100px);
   grid-template-areas: "firstName lastName" "email phone" "message message" "btn btn";
   /* touts les inputs qui n'ont pas de focus et qui'ils ont du text inside */
+}
+@media screen and (max-width: 1170px) {
+  .contact form {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 4rem);
+    grid-template-areas: "firstName" "lastName" "email" "phone" "message" "btn";
+  }
 }
 .contact form .ic1 {
   grid-area: firstName;
@@ -1067,6 +1151,11 @@ main {
 }
 .contact form #btn {
   margin-top: 10rem;
+}
+@media screen and (max-width: 1170px) {
+  .contact form #btn {
+    margin-top: 16rem;
+  }
 }
 .contact form .errorMessage {
   text-align: center;
@@ -1117,7 +1206,7 @@ main {
   background-color: transparent;
   border-radius: 1rem;
   color: #a8b2d1;
-  font-size: clamp(1.1rem, 1.5vw, 1.2rem);
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
 }
 .contact form .input::-moz-placeholder {
   font-family: var(--font-fira);

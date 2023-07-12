@@ -3,6 +3,9 @@
 .contact {
   margin: 15rem auto;
   &-c {
+    @media screen and (max-width: 1203px) {
+      max-width: unset;
+    }
     max-width: 60%;
     margin: 5rem auto;
     @include variables.flex;
@@ -25,6 +28,12 @@
       font-family: var(--font-raleway);
     }
     &-text {
+      @media screen and (max-width: 1028px) {
+        font-size: 1rem;
+      }
+      @media screen and (max-width: 700px) {
+        font-size: 0.8rem;
+      }
       color: variables.$slate;
       font-size: variables.$tlarge;
       text-align: center;
@@ -35,6 +44,17 @@
     }
   }
   form {
+    @media screen and (max-width: 1170px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 4rem);
+      grid-template-areas:
+        "firstName"
+        "lastName"
+        "email"
+        "phone"
+        "message"
+        "btn";
+    }
     max-width: 60%;
     margin: 3rem auto;
     display: grid;
@@ -68,6 +88,9 @@
     }
     #btn {
       margin-top: 10rem;
+      @media screen and (max-width: 1170px) {
+        margin-top: 16rem;
+      }
     }
     .errorMessage {
       text-align: center;
@@ -118,7 +141,7 @@
       background-color: transparent;
       border-radius: 1rem;
       color: variables.$lightest-slate;
-      font-size: clamp(1.1rem, 1.5vw, 1.2rem);
+      font-size: clamp(0.8rem, 1.5vw, 1.2rem);
     }
     .input::placeholder {
       font-family: var(--font-fira);

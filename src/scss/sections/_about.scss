@@ -6,6 +6,9 @@
     color: variables.$lightest-slate;
     position: relative;
     h2 {
+      @media screen and (max-width: 425px) {
+        font-size: 1.7rem;
+      }
       margin-bottom: 2rem;
       font-size: variables.$tx2large;
       font-weight: 700;
@@ -16,6 +19,9 @@
         color: variables.$theme-color;
       }
       &::after {
+        @media screen and (max-width: 425px) {
+          display: none;
+        }
         content: "";
         position: absolute;
         top: 20px;
@@ -41,6 +47,9 @@
         grid-area: text;
         text-align: justify;
       }
+    }
+    @media screen and (max-width: 425px) {
+      grid-template-rows: 3rem 1fr;
     }
     display: grid;
     grid-template-columns: 60% 40%;
@@ -126,6 +135,10 @@
         transition: 0.3s ease-in-out;
       }
       &-container {
+        @media screen and (max-width: 375px) {
+          height: 450px;
+          width: 270px;
+        }
         position: relative;
         height: 556px;
         width: 345px;

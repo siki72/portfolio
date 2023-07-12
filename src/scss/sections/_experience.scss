@@ -127,6 +127,12 @@
         @media screen and (max-width: 545px) {
           max-width: 65%;
         }
+        @media screen and (max-width: 425px) {
+          max-width: 65%;
+        }
+        @media screen and (max-width: 375px) {
+          max-width: 57%;
+        }
         display: flex;
         flex-direction: column;
         gap: 1rem;
