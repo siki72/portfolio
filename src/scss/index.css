@@ -638,6 +638,9 @@ main {
   }
 }
 .about-grid-photo-container img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   z-index: 0;
   filter: grayscale(100%);
   transition: 0.3s ease-in-out;
@@ -964,7 +967,7 @@ main {
 .projects-container .project-info-title {
   width: -moz-max-content;
   width: max-content;
-  color: #a8b2d1;
+  color: #f86f03;
   font-size: 25px;
   font-family: var(--font-raleway);
   cursor: pointer;

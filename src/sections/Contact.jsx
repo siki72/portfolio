@@ -90,7 +90,6 @@ const Contact = () => {
     return dispatch({ type: "" });
   };
 
-  console.log(window.screenY);
   return (
     <section className="contact" id="contact">
       {state.loading && <Loading />}

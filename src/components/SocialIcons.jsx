@@ -19,7 +19,7 @@ const SocialIcons = () => {
     {
       name: "Youtube",
       icon: <FiYoutube />,
-      link: "https://www.youtube.com/",
+      link: "https://www.youtube.com/@CodeClair",
     },
     {
       name: "LinkedIn",
@@ -34,7 +34,7 @@ const SocialIcons = () => {
     {
       name: "Twitter",
       icon: <FiTwitter />,
-      link: "https://twitter.com/",
+      link: "https://twitter.com/CodeClair72",
     },
   ];
   return (
@@ -55,6 +55,7 @@ const SocialIcons = () => {
               href={link}
               className="social-icons-list-item-link"
               target="_blank"
+              aria-label="name"
             >
               {icon}
             </Link>

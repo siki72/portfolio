@@ -43,7 +43,7 @@ const Projects = () => {
       ],
       projectExternalLinks: {
         github: "https://github.com/siki72/hikaya",
-        externalLink: "",
+        externalLink: "/",
       },
     },
     {
@@ -55,7 +55,7 @@ const Projects = () => {
       projectTech: ["React", "Node.js", "MongoDB", "Express", "Redux Toolkit"],
       projectExternalLinks: {
         github: "https://github.com/siki72/Netflix_clone",
-        externalLink: "",
+        externalLink: "/",
       },
     },
   ];
@@ -88,7 +88,7 @@ const Projects = () => {
             return (
               <div className="project" key={projectName}>
                 <div className="project-info">
-                  <p className="project-info-overline">Featured Project</p>
+                  <p className="project-info-overline"></p>
                   <h3 className="project-info-title">{projectName}</h3>
                   <div className="project-info-description">
                     <p>{projectDescription}</p>
@@ -106,6 +106,7 @@ const Projects = () => {
                         target="_blank"
                         href={projectExternalLinks.github}
                         className="project-info-links-item-link"
+                        aria-label={projectName}
                       >
                         <FiGithub />
                       </Link>

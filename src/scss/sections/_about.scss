@@ -143,6 +143,7 @@
         height: 556px;
         width: 345px;
         img {
+          user-select: none;
           z-index: 0;
           filter: grayscale(100%);
           transition: 0.3s ease-in-out;

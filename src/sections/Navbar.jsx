@@ -111,7 +111,10 @@ const Navbar = ({ open, setOpen }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut", delay: 0.8 }}
           >
-            <Button text="CV" link="http://localhost:3000/cv.pdf" />
+            <Button
+              text="CV"
+              link="http://localhost:3000/resume-ali-missoum.pdf"
+            />
           </motion.div>
         </div>
       </div>

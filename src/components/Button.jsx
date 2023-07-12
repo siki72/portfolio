@@ -1,11 +1,11 @@
 import Link from "next/link.js";
 import React from "react";
 
-const Button = ({ text, link }) => {
+const Button = ({ text, link, down }) => {
   return (
-    <Link className="btn" href={link}>
+    <a className="btn" href={link} download>
       {text}
-    </Link>
+    </a>
   );
 };
 

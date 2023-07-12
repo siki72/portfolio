@@ -9,7 +9,6 @@ const Experience = () => {
   useEffect(() => {
     const seletedTab = () => {
       if (screenWidth > 950) {
-        console.log("oui");
         underlineRef.current.style.top = `${selected * 2.5}rem`;
       } else {
         underlineRef.current.style.left = `${selected * 8}rem`;
@@ -66,7 +65,7 @@ const Experience = () => {
       </div>
       <div className="container">
         <ul className="exp-slider">
-          <div className="underline" ref={underlineRef}></div>
+          <li className="underline" ref={underlineRef}></li>
           {expereinces.map((experience, index) => {
             return (
               <li
