@@ -27,19 +27,26 @@ const Contact = dynamic(() => import("../sections/Contact.jsx"), {
 const Page = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
-
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const handleLoader = () => {
     setIsLoading(false);
     setTimeout(() => setShowContent(true), 250);
   };
 
   return (
-    <div className="container">
+    <div className="container" onClick={() => setIsNavOpen(false)}>
+      <Head>
+        <title> Ali Missoum</title>
+        <meta
+          name="description"
+          content="Développeur React freelance, développeur next.js, développeur node.js"
+        />
+      </Head>
       {showContent && (
         <>
           <SocialIcons />
           <Email />
-          <Navbar />
+          <Navbar open={isNavOpen} setOpen={setIsNavOpen} />
           <main>
             <Hero />
             <About />

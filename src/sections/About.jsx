@@ -80,7 +80,6 @@ const About = () => {
           </ul>
         </div>
         <div className="about-grid-photo">
-          <div className="overlay"></div>
           <div className="overlay-border"></div>
           <div className="about-grid-photo-container">
             <Image

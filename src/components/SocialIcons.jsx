@@ -24,7 +24,7 @@ const SocialIcons = () => {
     {
       name: "LinkedIn",
       icon: <FiLinkedin />,
-      link: "https://www.linkedin.com/in/",
+      link: "https://www.linkedin.com/in/ali-missoum-9037a0264/",
     },
     {
       name: "Instagram",

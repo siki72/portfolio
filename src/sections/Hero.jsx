@@ -69,7 +69,7 @@ const Hero = () => {
           delay: 1.65,
         }}
       >
-        <Button text="Contact" link="/#work" />
+        <Button text="Contact" link="/#contact" />
       </motion.div>
     </section>
   );

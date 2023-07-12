@@ -88,14 +88,7 @@ const Projects = () => {
             return (
               <div className="project" key={projectName}>
                 <div className="project-image">
-                  <motion.div
-                    className="project-image-container"
-                    whileHover={{ zIndex: 10 }}
-                    transition={{
-                      ease: "easeInOut",
-                      duration: 1,
-                    }}
-                  >
+                  <motion.div className="project-image-container">
                     <Image
                       className="project-image-container-img"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -4,7 +4,7 @@ import Link from "next/link.js";
 import React, { useEffect, useState } from "react";
 import Button from "../components/Button.jsx";
 import { motion } from "framer-motion";
-const Navbar = () => {
+const Navbar = ({ open, setOpen }) => {
   const datas = [
     { name: "A propos", link: "/#about" },
     { name: "Experience", link: "/#experience" },
@@ -15,45 +15,16 @@ const Navbar = () => {
     },
   ];
   const [isVisible, setIsVisible] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
   const [responsiveNavVisible, setResponsiveNavVisible] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 32 ? setIsVisible(true) : setIsVisible(false);
     });
   }, []);
-  useEffect(() => {
-    const links = document.querySelectorAll(".nav-items-list-item-link");
-    links.forEach((link) => {
-      link.addEventListener("click", () => {
-        console.log("link");
-        setIsOpen(false);
-      });
-    });
-    const nav = document.querySelector(".nav-items");
-    nav?.addEventListener("click", (e) => {
-      console.log("nav");
-      e.stopPropagation();
-    });
-    const html = document.querySelector("html");
-    if (isOpen) {
-      html?.addEventListener("click", (e) => {
-        console.log("html");
-        setIsOpen(!isOpen);
-      });
-    }
-    const btn = document.querySelector(".btnContainer");
-    btn.addEventListener("click", (e) => {
-      console.log("btn");
-      e.stopPropagation();
-      setIsOpen(!isOpen);
-    });
-    return;
-  }, [isOpen]);
 
   useEffect(() => {
     const main = document.querySelector("main");
-    if (isOpen) {
+    if (open) {
       main.setAttribute("class", "blur");
     } else {
       main.removeAttribute("class");
@@ -63,12 +34,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className={`wrapper ${isVisible ? "blurNav" : ""}`}>
-        <div
-          className="brand"
-          /* initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }} */
-        >
+        <div className="brand">
           <Link href="/">
             <Logo />
           </Link>
@@ -77,7 +43,7 @@ const Navbar = () => {
         <motion.div
           className="btnContainer"
           onClick={(e) => {
-            setIsOpen((isOpen) => !isOpen);
+            setOpen((prev) => !prev);
             e.stopPropagation();
           }}
         >
@@ -89,34 +55,37 @@ const Navbar = () => {
           >
             <svg className="hamburger" viewBox="0 0 100 100" width={30}>
               <rect
-                className={isOpen ? "line top" : "line"}
+                className={open ? "line top" : "line"}
                 width={80}
                 height={10}
                 x={10}
                 y={25}
                 rx={5}
+                fill="#f86f03"
               ></rect>
               <rect
-                className={isOpen ? "line middle" : "line"}
+                className={open ? "line middle" : "line"}
                 width={80}
                 height={10}
                 x={10}
                 y={45}
                 rx={5}
+                fill="#f86f03"
               ></rect>
               <rect
-                className={isOpen ? "line bottom" : "line"}
+                className={open ? "line bottom" : "line"}
                 width={80}
                 height={10}
                 x={10}
                 y={65}
                 rx={5}
+                fill="#f86f03"
               ></rect>
             </svg>
           </button>
         </motion.div>
 
-        <div className="nav-items">
+        <div className={`nav-items ${open ? "showNav" : ""}`}>
           <ul className="nav-items-list">
             {datas.map(({ name, link }, index) => (
               <motion.li
