@@ -9,6 +9,7 @@ import { useState } from "react";
 import Loader from "@/components/Loader.jsx";
 import Loading from "@/components/Loading.jsx";
 import Footer from "@/sections/Footer.jsx";
+import Script from "next/script.js";
 
 const About = dynamic(() => import("../sections/About.jsx"), {
   loading: () => <Loading />,
@@ -35,13 +36,21 @@ const Page = () => {
 
   return (
     <div className="container" onClick={() => setIsNavOpen(false)}>
-      <Head>
-        <title> Ali Missoum</title>
-        <meta
-          name="description"
-          content="Développeur React freelance, développeur next.js, développeur node.js"
-        />
-      </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-W1ESHF87V6"
+      ></Script>
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-W1ESHF87V6');
+              `,
+        }}
+      />
+
       {showContent && (
         <>
           <SocialIcons />
