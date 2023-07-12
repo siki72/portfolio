@@ -15,6 +15,27 @@
   &-title-large {
     font-size: variables.$tgiant;
     color: variables.$light-slate;
+    @media screen and (max-width: 1380px) {
+      font-size: 4rem;
+    }
+    @media screen and (max-width: 1190px) {
+      font-size: 3.5rem;
+    }
+    @media screen and (max-width: 1098px) {
+      font-size: 3rem;
+    }
+    @media screen and (max-width: 1008px) {
+      font-size: 2.7rem;
+    }
+    @media screen and (max-width: 945px) {
+      font-size: 2.2rem;
+    }
+    @media screen and (max-width: 851px) {
+      font-size: 2rem;
+    }
+    @media screen and (max-width: 551px) {
+      font-size: 1.85rem;
+    }
   }
   &-title-sub {
     color: variables.$lightest-slate;
@@ -27,6 +48,24 @@
     font-weight: 600;
     line-height: 1.6rem;
     margin-right: 40%;
+    @media screen and (max-width: 1380px) {
+      font-size: 1.1rem;
+    }
+    @media screen and (max-width: 1190px) {
+      font-size: 1rem;
+      margin-right: 0;
+    }
+    @media screen and (max-width: 1098px) {
+      font-size: 1rem;
+      margin-right: 0;
+    }
+    @media screen and (max-width: 1008px) {
+      font-size: 0.9rem;
+      margin-right: 20%;
+    }
+    @media screen and (max-width: 551px) {
+      font-size: 0.8rem;
+    }
   }
   &-link {
     display: inline-block;

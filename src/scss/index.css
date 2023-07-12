@@ -206,10 +206,25 @@ nav .btnContainer {
   bottom: 0;
   left: 4rem;
 }
+@media screen and (max-width: 725px) {
+  .social-icons {
+    position: absolute;
+    top: 56%;
+    transform: translateY(-50%);
+    right: 0rem;
+    left: unset;
+    width: 5rem;
+  }
+}
 .social-icons-list {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+@media screen and (max-width: 725px) {
+  .social-icons-list {
+    display: flex;
+  }
 }
 .social-icons-list-item {
   font-size: 22px;
@@ -238,6 +253,11 @@ nav .btnContainer {
 .social-icons-list-item:last-child {
   margin-bottom: 3rem;
 }
+@media screen and (max-width: 725px) {
+  .social-icons-list-item:last-child {
+    margin-bottom: 0;
+  }
+}
 .social-icons::after {
   content: "";
   width: 2px;
@@ -245,6 +265,11 @@ nav .btnContainer {
   display: block;
   background-color: #ccd6f6;
   margin: 0 auto;
+}
+@media screen and (max-width: 725px) {
+  .social-icons::after {
+    display: none;
+  }
 }
 
 .email {
@@ -254,6 +279,11 @@ nav .btnContainer {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+@media screen and (max-width: 725px) {
+  .email {
+    display: none;
+  }
 }
 .email-link {
   writing-mode: vertical-rl;
@@ -296,8 +326,43 @@ nav .btnContainer {
   font-family: var(--font-fira);
 }
 .hero-title-large {
-  font-size: clamp(40px, 8vw, 80px);
+  font-size: clamp(40px, 7vw, 80px);
   color: #ccd6f6;
+}
+@media screen and (max-width: 1380px) {
+  .hero-title-large {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 1190px) {
+  .hero-title-large {
+    font-size: 3.5rem;
+  }
+}
+@media screen and (max-width: 1098px) {
+  .hero-title-large {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 1008px) {
+  .hero-title-large {
+    font-size: 2.7rem;
+  }
+}
+@media screen and (max-width: 945px) {
+  .hero-title-large {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 851px) {
+  .hero-title-large {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 551px) {
+  .hero-title-large {
+    font-size: 1.85rem;
+  }
 }
 .hero-title-sub {
   color: #a8b2d1;
@@ -310,6 +375,34 @@ nav .btnContainer {
   font-weight: 600;
   line-height: 1.6rem;
   margin-right: 40%;
+}
+@media screen and (max-width: 1380px) {
+  .hero-text {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 1190px) {
+  .hero-text {
+    font-size: 1rem;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 1098px) {
+  .hero-text {
+    font-size: 1rem;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 1008px) {
+  .hero-text {
+    font-size: 0.9rem;
+    margin-right: 20%;
+  }
+}
+@media screen and (max-width: 551px) {
+  .hero-text {
+    font-size: 0.8rem;
+  }
 }
 .hero-link {
   display: inline-block;
@@ -343,6 +436,16 @@ nav .btnContainer {
 main {
   margin: 0 14rem;
   transition: all 0.3s ease-in-out;
+}
+@media screen and (max-width: 1412px) {
+  main {
+    margin: 0 13rem;
+  }
+}
+@media screen and (max-width: 725px) {
+  main {
+    margin: 0 4rem;
+  }
 }
 
 .blur {
@@ -765,7 +868,7 @@ main {
   color: #f86f03;
 }
 .contact-c-sub-title {
-  font-size: clamp(40px, 8vw, 80px);
+  font-size: clamp(40px, 7vw, 80px);
   color: #ccd6f6;
   font-family: var(--font-raleway);
 }

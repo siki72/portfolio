@@ -1,9 +1,20 @@
 @use "../variables";
 .social-icons {
+  @media screen and (max-width: 725px) {
+    position: absolute;
+    top: 56%;
+    transform: translateY(-50%);
+    right: -0rem;
+    left: unset;
+    width: 5rem;
+  }
   position: fixed;
   bottom: 0;
   left: 4rem;
   &-list {
+    @media screen and (max-width: 725px) {
+      display: flex;
+    }
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -32,10 +43,16 @@
       }
       &:last-child {
         margin-bottom: 3rem;
+        @media screen and (max-width: 725px) {
+          margin-bottom: 0;
+        }
       }
     }
   }
   &::after {
+    @media screen and (max-width: 725px) {
+      display: none;
+    }
     content: "";
     width: 2px;
     height: 5.625rem;
