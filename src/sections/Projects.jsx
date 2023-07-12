@@ -87,18 +87,6 @@ const Projects = () => {
           }) => {
             return (
               <div className="project" key={projectName}>
-                <div className="project-image">
-                  <motion.div className="project-image-container">
-                    <Image
-                      className="project-image-container-img"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      src={image}
-                      fill={true}
-                      alt={projectName}
-                      loading="lazy"
-                    />
-                  </motion.div>
-                </div>
                 <div className="project-info">
                   <p className="project-info-overline">Featured Project</p>
                   <h3 className="project-info-title">{projectName}</h3>
@@ -132,6 +120,18 @@ const Projects = () => {
                       </Link>
                     </li>
                   </ul>
+                </div>
+                <div className="project-image">
+                  <motion.div className="project-image-container">
+                    <Image
+                      className="project-image-container-img"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      src={image}
+                      fill={true}
+                      alt={projectName}
+                      loading="lazy"
+                    />
+                  </motion.div>
                 </div>
               </div>
             );

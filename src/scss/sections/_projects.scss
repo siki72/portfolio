@@ -31,15 +31,34 @@
     flex-direction: column;
     gap: 5rem;
     .project {
+      @media screen and (max-width: 1180px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      @media screen and (max-width: 803px) {
+        @include variables.flex;
+      }
       position: relative;
       display: flex;
       justify-content: flex-end;
       min-height: 400px;
       &-image {
+        @media screen and (max-width: 1180px) {
+          position: unset;
+        }
         &-container {
           position: relative;
           width: 700px;
           height: 400px;
+          @media screen and (max-width: 1115px) {
+            width: 500px;
+            height: 300px;
+          }
+          @media screen and (max-width: 930px) {
+            width: 400px;
+            height: 250px;
+          }
           &-img {
             object-position: top left;
             object-fit: cover;
@@ -98,6 +117,14 @@
           background-color: variables.$lightest-navy;
           border-radius: 0.2rem;
           p {
+            @media screen and (max-width: 1115px) {
+              font-size: 0.9rem;
+            }
+            @media screen and (max-width: 930px) {
+              font-size: 0.7rem;
+              letter-spacing: 1px;
+              line-height: 1.2rem;
+            }
             color: variables.$lightest-slate;
             font-family: var(--font-raleway);
             padding: 2rem;
@@ -142,6 +169,11 @@
         }
       }
       &:nth-of-type(even) {
+        @media screen and (max-width: 1180px) {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
         justify-content: flex-start;
         .project-image {
           right: 0;
