@@ -7,19 +7,20 @@ const Experience = () => {
   const [selected, setSelected] = useState(0);
   const screenWidth = window.innerWidth;
   useEffect(() => {
+    const liner = underlineRef.current;
     const seletedTab = () => {
       if (screenWidth > 950) {
-        underlineRef.current.style.top = `${selected * 2.5}rem`;
+        liner.style.top = `${selected * 2.5}rem`;
       } else {
-        underlineRef.current.style.left = `${selected * 8}rem`;
+        liner.style.left = `${selected * 8}rem`;
       }
     };
     seletedTab();
     return () => {
       if (screenWidth > 950) {
-        underlineRef.current.style.top = "0";
+        liner.style.top = "0";
       } else {
-        underlineRef.current.style.left = "0";
+        liner.style.left = "0";
       }
     };
   }, [selected, screenWidth]);

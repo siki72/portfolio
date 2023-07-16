@@ -1,10 +1,13 @@
 "use client";
 import Logo from "@/components/Logo.jsx";
 import Link from "next/link.js";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "../components/Button.jsx";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-const Navbar = ({ open, setOpen }) => {
+const Navbar = ({ open, setOpen, element }) => {
+  const pathname = usePathname();
+  const liRefs = useRef([]);
   const datas = [
     { name: "A propos", link: "/#about" },
     { name: "Experience", link: "/#experience" },
@@ -15,12 +18,29 @@ const Navbar = ({ open, setOpen }) => {
     },
   ];
   const [isVisible, setIsVisible] = useState(false);
-  const [responsiveNavVisible, setResponsiveNavVisible] = useState(false);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 32 ? setIsVisible(true) : setIsVisible(false);
     });
   }, []);
+
+  useEffect(() => {
+    const navs = {
+      about: liRefs.current[0],
+      experience: liRefs.current[1],
+      projects: liRefs.current[2],
+      contact: liRefs.current[3],
+    };
+
+    for (const [key, value] of Object.entries(navs)) {
+      if (element === key) {
+        value.style.color = "#f86f03";
+      } else {
+        value.style.color = "#a8b2d1";
+      }
+    }
+  }, [element]);
 
   useEffect(() => {
     const main = document.querySelector("main");
@@ -30,6 +50,8 @@ const Navbar = ({ open, setOpen }) => {
       main.removeAttribute("class");
     }
   });
+
+  console.log(element);
 
   return (
     <nav>
@@ -90,7 +112,8 @@ const Navbar = ({ open, setOpen }) => {
             {datas.map(({ name, link }, index) => (
               <motion.li
                 key={name}
-                className="nav-items-list-item"
+                ref={(element) => (liRefs.current[index] = element)}
+                className={`nav-items-list-item `}
                 initial={{ opacity: 0, y: -25 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -113,7 +136,7 @@ const Navbar = ({ open, setOpen }) => {
           >
             <Button
               text="CV"
-              link="http://localhost:3000/resume-ali-missoum.pdf"
+              link="https://alimissoum.fr/resume-ali-missoum.pdf"
             />
           </motion.div>
         </div>

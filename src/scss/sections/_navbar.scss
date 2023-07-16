@@ -64,11 +64,11 @@ nav {
             color: inherit;
             padding: 10px;
             transition: all 0.3s ease-in-out;
-            &::before {
+            /*       &::before {
               counter-increment: nav-list;
               content: "0" counter(nav-list) ". ";
               color: variables.$theme-color;
-            }
+            } */
             &:focus {
               outline-color: variables.$theme-color;
             }
@@ -128,5 +128,8 @@ nav {
     @media screen and (max-width: 680px) {
       transform: scale(0.8);
     }
+  }
+  .active-link {
+    color: red;
   }
 }

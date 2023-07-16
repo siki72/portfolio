@@ -23,7 +23,7 @@ const Projects = () => {
       ],
       projectExternalLinks: {
         github: "https://github.com/siki72/alimissoum",
-        externalLink: "",
+        externalLink: "https://luxury-villas-zanz.netlify.app/",
       },
     },
     {
@@ -43,7 +43,7 @@ const Projects = () => {
       ],
       projectExternalLinks: {
         github: "https://github.com/siki72/hikaya",
-        externalLink: "/",
+        externalLink: "https://hikaya.netlify.app/",
       },
     },
     {
@@ -55,7 +55,7 @@ const Projects = () => {
       projectTech: ["React", "Node.js", "MongoDB", "Express", "Redux Toolkit"],
       projectExternalLinks: {
         github: "https://github.com/siki72/Netflix_clone",
-        externalLink: "/",
+        externalLink: "https://github.com/siki72/Netflix_clone",
       },
     },
   ];

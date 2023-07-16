@@ -2,8 +2,8 @@
 import React, { useEffect, useReducer, useRef } from "react";
 import validator from "validator";
 import emailjs from "@emailjs/browser";
-import { INTIAL_STATE, formReducer } from "@/reducers/formReducer.js";
-import { ACTIONS_TYPES } from "@/reducers/actionsType.js";
+import { INTIAL_STATE, formReducer } from "@/reducers/form/formReducer.js";
+import { ACTIONS_TYPES } from "@/reducers/form/actionsType.js";
 import Loading from "@/components/Loading.jsx";
 import { motion } from "framer-motion";
 
@@ -110,8 +110,8 @@ const Contact = () => {
         viewport={{ once: true }}
         transition={{ duration: 1, ease: "easeInOut" }}
         variants={{
-          visible: { opacity: 1, y: 0, scale: 1 },
-          hidden: { opacity: 0, y: 200, scale: 0.5 },
+          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, y: 40 },
         }}
       >
         <div className="inputContainer ic1">
