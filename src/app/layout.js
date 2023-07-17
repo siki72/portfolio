@@ -11,9 +11,9 @@ const raleway = Raleway({ subsets: ["latin"], variable: "--font-raleway" });
 export const metadata = {
   title: "Développeur front-end freelance React | Ali Missoum",
   description:
-    "Développeur React freelance, développeur next.js, dévéloppeur node js",
+    "Développeur React freelance sur le mans, développeur next.js, dévéloppeur node js",
   keywords:
-    "Développeur front-end, back-end, Javascript,React, Next.js, Node.js, freelance, portfolio, SQL, Mongodb",
+    "Développeur front-end, le mans, back-end, Javascript,React, Next.js, Node.js, freelance, portfolio, SQL, Mongodb",
   author: "Ali Missoum",
   robots: "index, follow",
   og: {
