@@ -43,8 +43,15 @@
       line-height: 1.6rem;
     }
   }
+
   form {
     @media screen and (max-width: 1170px) {
+      max-width: 80%;
+    }
+    @media screen and (max-width: 982px) {
+      max-width: 100%;
+    }
+    @media screen and (max-width: 886px) {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(6, 4rem);
       grid-template-areas:
@@ -55,12 +62,18 @@
         "message"
         "btn";
     }
+    @media screen and (max-width: 724px) {
+      max-width: 90%;
+    }
+    @media screen and (max-width: 320px) {
+      max-width: 100%;
+    }
     max-width: 60%;
     margin: 3rem auto;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 100px);
+    grid-template-rows: repeat(4, 5rem);
     grid-template-areas:
       "firstName lastName"
       "email phone"
@@ -87,9 +100,9 @@
       margin-top: 13rem;
     }
     #btn {
-      margin-top: 10rem;
+      margin-top: 23rem;
       @media screen and (max-width: 1170px) {
-        margin-top: 16rem;
+        /*     margin-top: 16rem; */
       }
     }
     .errorMessage {

@@ -94,7 +94,6 @@ const Navbar = ({ open, setOpen, element }) => {
             {datas.map(({ name, link, active }, index) => (
               <motion.li
                 key={name}
-                /* ref={(element) => (liRefs.current[index] = element)} */
                 className={`nav-items-list-item ${
                   element === active ? "active-link" : ""
                 } `}

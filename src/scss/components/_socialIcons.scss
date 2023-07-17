@@ -8,12 +8,15 @@
     left: unset;
     width: 5rem;
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 568px) {
     position: absolute;
     bottom: 2rem;
     right: 50%;
     top: unset;
     transform: translate(-50%);
+  }
+  @media screen and (max-width: 265px) {
+    display: none;
   }
   position: fixed;
   bottom: 0;
@@ -22,7 +25,7 @@
     @media screen and (max-width: 725px) {
       display: flex;
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 568px) {
       display: flex;
       flex-direction: row;
     }

@@ -1,6 +1,7 @@
 @use "../variables";
 .about {
   margin: 15rem 0;
+
   .title {
     font-family: var(--font-raleway);
     color: variables.$lightest-slate;
@@ -34,23 +35,16 @@
   }
   &-grid {
     @media screen and (max-width: 1180px) {
-      grid-template-columns: 1fr;
-      grid-template-rows: 40rem 1fr;
-      grid-template-areas:
-        "img"
-        "text";
-      .about-grid-photo {
-        grid-area: img;
-        margin: 0 auto;
-      }
-      .about-grid-info {
-        grid-area: text;
-        text-align: justify;
-      }
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 3rem;
+      text-align: justify;
     }
-    @media screen and (max-width: 425px) {
-      grid-template-rows: 3rem 1fr;
+    @media screen and (max-width: 725px) {
+      grid-template-rows: 25rem 1fr;
     }
+
     display: grid;
     grid-template-columns: 60% 40%;
     gap: 1rem;
@@ -62,6 +56,18 @@
         @media screen and (max-width: 904px) {
           font-size: 1rem;
           margin-right: 0;
+        }
+        @media screen and (max-width: 550px) {
+          font-size: 0.9rem;
+          margin-right: 0;
+        }
+        @media screen and (max-width: 334px) {
+          max-width: 85%;
+          margin: 0 auto;
+        }
+        @media screen and (max-width: 284px) {
+          max-width: 70%;
+          margin: 0 auto;
         }
         color: variables.$slate;
         margin-right: 10%;
@@ -78,12 +84,22 @@
         @media screen and (max-width: 795px) {
           gap: 0.5rem;
         }
+        @media screen and (max-width: 385px) {
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         padding: 0 3rem;
         &-item {
           @media screen and (max-width: 795px) {
             margin: 0.3rem;
+          }
+          @media screen and (max-width: 476px) {
+            font-size: 0.9rem;
           }
           position: relative;
           font-size: variables.$tbase;
@@ -102,6 +118,10 @@
       }
     }
     &-photo {
+      @media screen and (max-width: 300px) {
+        max-width: 95%;
+        margin: 0 auto;
+      }
       position: relative;
       width: max-content;
       height: max-content;
@@ -135,9 +155,13 @@
         transition: 0.3s ease-in-out;
       }
       &-container {
-        @media screen and (max-width: 375px) {
-          height: 450px;
-          width: 270px;
+        @media screen and (max-width: 725px) {
+          height: 350px;
+          width: 220px;
+        }
+        @media screen and (max-width: 430px) {
+          height: 300px;
+          width: 180px;
         }
         position: relative;
         height: 556px;

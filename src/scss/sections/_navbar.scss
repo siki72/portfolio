@@ -2,6 +2,11 @@
 nav {
   min-height: 3.75rem;
   .wrapper {
+    @media screen and (max-width: 430px) {
+      display: flex;
+      min-width: 90%;
+      padding: 0 1rem;
+    }
     position: relative;
     @include variables.between;
     padding: 0 4rem;
@@ -55,6 +60,7 @@ nav {
         @media screen and (max-width: 1170px) {
           display: flex;
           flex-direction: column;
+          align-items: center;
         }
         display: flex;
         gap: 3rem;
@@ -113,12 +119,14 @@ nav {
   }
   .btn .top {
     rotate: 45deg;
+    y: 45%;
   }
   .btn .middle {
     opacity: 0;
   }
   .btn .bottom {
     rotate: -45deg;
+    y: 45%;
   }
   .btnContainer {
     display: none;

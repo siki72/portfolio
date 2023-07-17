@@ -8,6 +8,10 @@ main {
     margin: 0 4rem;
   }
 
+  @media screen and (max-width: 560px) {
+    margin: 0 2rem;
+  }
+
   @media screen and (max-width: 425px) {
     margin: 0 1.3rem;
   }

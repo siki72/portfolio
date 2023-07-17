@@ -2,6 +2,9 @@
 .projects {
   margin: 15rem 0;
   .title {
+    @media screen and (max-width: 512px) {
+      text-align: center;
+    }
     font-family: var(--font-raleway);
     color: variables.$lightest-slate;
     position: relative;
@@ -59,9 +62,17 @@
             width: 400px;
             height: 250px;
           }
-          @media screen and (max-width: 425px) {
-            width: 350px;
-            height: 250px;
+          @media screen and (max-width: 512px) {
+            width: 300px;
+            height: 200px;
+          }
+          @media screen and (max-width: 380px) {
+            width: 275px;
+            height: 200px;
+          }
+          @media screen and (max-width: 300px) {
+            width: 200px;
+            height: 150px;
           }
           &-img {
             object-position: top left;
@@ -118,8 +129,10 @@
           }
         }
         &-description {
+          @media screen and (max-width: 512px) {
+          }
           background-color: variables.$lightest-navy;
-          border-radius: 0.2rem;
+          border-radius: 0.5rem;
           p {
             @media screen and (max-width: 1115px) {
               font-size: 1rem;
@@ -128,6 +141,9 @@
               font-size: 0.8rem;
               letter-spacing: 1px;
               line-height: 1.2rem;
+            }
+            @media screen and (max-width: 512px) {
+              padding: 0.7rem;
             }
             color: variables.$lightest-slate;
             font-family: var(--font-raleway);
