@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 const Navbar = ({ open, setOpen, element }) => {
   const pathname = usePathname();
   const liRefs = useRef([]);
+  const down = true;
   const datas = [
     { name: "A propos", link: "/#about", active: "about" },
     { name: "Experience", link: "/#experience", active: "experience" },
@@ -120,6 +121,7 @@ const Navbar = ({ open, setOpen, element }) => {
             <Button
               text="CV"
               link="https://alimissoum.fr/resume-ali-missoum.pdf"
+              down={down}
             />
           </motion.div>
         </div>
