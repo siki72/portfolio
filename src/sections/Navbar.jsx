@@ -9,12 +9,13 @@ const Navbar = ({ open, setOpen, element }) => {
   const pathname = usePathname();
   const liRefs = useRef([]);
   const datas = [
-    { name: "A propos", link: "/#about" },
-    { name: "Experience", link: "/#experience" },
-    { name: "Projets", link: "/#work" },
+    { name: "A propos", link: "/#about", active: "about" },
+    { name: "Experience", link: "/#experience", active: "experience" },
+    { name: "Projets", link: "/#work", active: "work" },
     {
       name: "Contact",
       link: "/#contact",
+      active: "contact",
     },
   ];
   const [isVisible, setIsVisible] = useState(false);
@@ -26,23 +27,6 @@ const Navbar = ({ open, setOpen, element }) => {
   }, []);
 
   useEffect(() => {
-    const navs = {
-      about: liRefs.current[0],
-      experience: liRefs.current[1],
-      projects: liRefs.current[2],
-      contact: liRefs.current[3],
-    };
-
-    for (const [key, value] of Object.entries(navs)) {
-      if (element === key) {
-        value.style.color = "#f86f03";
-      } else {
-        value.style.color = "#a8b2d1";
-      }
-    }
-  }, [element]);
-
-  useEffect(() => {
     const main = document.querySelector("main");
     if (open) {
       main.setAttribute("class", "blur");
@@ -50,8 +34,6 @@ const Navbar = ({ open, setOpen, element }) => {
       main.removeAttribute("class");
     }
   });
-
-  console.log(element);
 
   return (
     <nav>
@@ -109,11 +91,13 @@ const Navbar = ({ open, setOpen, element }) => {
 
         <div className={`nav-items ${open ? "showNav" : ""}`}>
           <ul className="nav-items-list">
-            {datas.map(({ name, link }, index) => (
+            {datas.map(({ name, link, active }, index) => (
               <motion.li
                 key={name}
-                ref={(element) => (liRefs.current[index] = element)}
-                className={`nav-items-list-item `}
+                /* ref={(element) => (liRefs.current[index] = element)} */
+                className={`nav-items-list-item ${
+                  element === active ? "active-link" : ""
+                } `}
                 initial={{ opacity: 0, y: -25 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{

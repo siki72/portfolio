@@ -58,7 +58,7 @@ const Cards = () => {
     },
   ];
   return (
-    <section className="projects">
+    <section className="projects" id="projects">
       <div className="title">
         <h2>Quelques Projets</h2>
       </div>

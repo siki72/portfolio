@@ -4,16 +4,13 @@ import Navbar from "../sections/Navbar.jsx";
 import SocialIcons from "@/components/SocialIcons.jsx";
 import Email from "@/components/Email.jsx";
 import Hero from "../sections/Hero.jsx";
-import Head from "next/head.js";
+
 import { useEffect, useReducer, useRef, useState } from "react";
 import Loader from "@/components/Loader.jsx";
 import Loading from "@/components/Loading.jsx";
 import Footer from "@/sections/Footer.jsx";
 import Script from "next/script.js";
-import {
-  INITIAL_STATE,
-  activeNvigationReucer,
-} from "@/reducers/activNav/activNav.js";
+import Projects from "@/sections/Projects.jsx";
 
 const About = dynamic(() => import("../sections/About.jsx"), {
   loading: () => <Loading />,
@@ -35,7 +32,6 @@ const Page = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [state, dispatch] = useReducer(activeNvigationReucer, INITIAL_STATE);
   const handleLoader = () => {
     setIsLoading(false);
     setTimeout(() => setShowContent(true), 250);
@@ -44,9 +40,10 @@ const Page = () => {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          /* console.log("entery", entry.target.firstChild.id); */
-          setElement(entry.target.firstChild.id);
+        if (entry.intersectionRatio > 0) {
+          setElement(() => entry.target.firstChild.id);
+        } else if (window.scrollY < 400) {
+          setElement("");
         }
       });
     });
@@ -59,6 +56,7 @@ const Page = () => {
       observer.disconnect();
     };
   }, [showContent]);
+  console.log(window.scrollY);
 
   return (
     <div className="container" onClick={() => setIsNavOpen(false)}>
@@ -81,7 +79,9 @@ const Page = () => {
         <>
           <SocialIcons />
           <Email />
-          <Navbar open={isNavOpen} setOpen={setIsNavOpen} element={element} />
+          <header>
+            <Navbar open={isNavOpen} setOpen={setIsNavOpen} element={element} />
+          </header>
           <main>
             <section>
               <Hero />
@@ -95,7 +95,7 @@ const Page = () => {
               <Experience />
             </section>
             <section ref={(cardsRef) => childsRef.current.push(cardsRef)}>
-              <Cards />
+              <Projects />
             </section>
             <section ref={(contactRef) => childsRef.current.push(contactRef)}>
               <Contact />
