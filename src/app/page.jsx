@@ -10,7 +10,6 @@ import Loader from "@/components/Loader.jsx";
 import Loading from "@/components/Loading.jsx";
 import Footer from "@/sections/Footer.jsx";
 import Script from "next/script.js";
-import Projects from "@/sections/Projects.jsx";
 
 const About = dynamic(() => import("../sections/About.jsx"), {
   loading: () => <Loading />,
@@ -18,7 +17,7 @@ const About = dynamic(() => import("../sections/About.jsx"), {
 const Experience = dynamic(() => import("../sections/Experience.jsx"), {
   loading: () => <Loading />,
 });
-const Cards = dynamic(() => import("../sections/Cards.jsx"), {
+const Projects = dynamic(() => import("../sections/Projects.jsx"), {
   loading: () => <Loading />,
 });
 const Contact = dynamic(() => import("../sections/Contact.jsx"), {
@@ -56,7 +55,6 @@ const Page = () => {
       observer.disconnect();
     };
   }, [showContent]);
-  console.log(window.scrollY);
 
   return (
     <div className="container" onClick={() => setIsNavOpen(false)}>
@@ -94,7 +92,7 @@ const Page = () => {
             >
               <Experience />
             </section>
-            <section ref={(cardsRef) => childsRef.current.push(cardsRef)}>
+            <section ref={(projectsRef) => childsRef.current.push(projectsRef)}>
               <Projects />
             </section>
             <section ref={(contactRef) => childsRef.current.push(contactRef)}>

@@ -116,6 +116,7 @@ const Projects = () => {
                         target="_blank"
                         href={projectExternalLinks.externalLink}
                         className="project-info-links-item-link"
+                        aria-label={projectName}
                       >
                         <FiExternalLink />
                       </Link>

@@ -47,7 +47,6 @@ const Contact = () => {
       for (const [key, value] of Object.entries(fields)) {
         const fieldValue = data.get(value);
         field = document.getElementById(key);
-        console.log(`${key} : ${fieldValue}`);
 
         if (
           (key === "Téléphone" && fieldValue.length < 10) ||
